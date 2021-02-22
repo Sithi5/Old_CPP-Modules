@@ -4,15 +4,32 @@
 
 #include <iostream>
 #include <ctype.h>
+#include <string>
 #include "contact.hpp"
+#include <stdio.h>
+#include <stdlib.h>
+
+void print_with_width(std::string str, int width){
+    std::cout.width(width);
+    std::cout << str;
+    return ;
+}
+
+void print_formated_contact_info(std::string str){
+    if (str.size() >= 10){
+        str.resize(9);
+    }
+    str.append("|");
+    print_with_width(str, 11);
+}
 
 int main(void){
     contact phone_book[8];
+    std::string input;
 
     int     i = 0;
 
     while (1){
-        std::string input;
         std::cout << "Waiting for commands : ['EXIT', 'SEARCH', 'ADD']." << std::endl;
         std::cout << "input: ";
 
@@ -76,29 +93,64 @@ int main(void){
             phone_book[i++].display();
         }
         else if (input == "SEARCH"){
+            int research_id;
+            std::string display_first_name;
+            std::string display_last_name;
+            std::string display_nickname;
+            std::string display_index;
+            print_with_width("id|", 11);
+            print_with_width("firstname|", 11);
+            print_with_width("lastname|", 11);
+            print_with_width("nickname|", 11);
+            std::cout << std::endl;
+
             for (int j = 0; j < 8; j++) {
                 if (phone_book[j].isSet()) {
+                    display_first_name = phone_book[j].getFirstName();
+                    display_last_name = phone_book[j].getLastName();
+                    display_nickname = phone_book[j].getNickname();
+                    std::cout.width(10);
+                    std::cout << j << "|";
+                    print_formated_contact_info(display_first_name);
+                    print_formated_contact_info(display_last_name);
+                    print_formated_contact_info(display_nickname);
+                    std::cout << std::endl;
+
+
+
+//                    std::cout << display_first_name << display_last_name << display_nickname;
+
 
                 }
-                std::cout << "Witch contact you want to display ? " << std::endl;
+            }
+
+            std::cout << "Which contact do you want to display ? " << std::endl;
+            std::cin >> research_id;
+            if (std::cin.fail() || research_id > 7 || research_id < 0 || !phone_book[research_id].isSet()){
+                std::cout << "Invalid Id." << std::endl;
+            }
+            else{
+                std::cout << "selected id : " << research_id<< std::endl;
+                phone_book[research_id].display();
             }
         }
-//        else if (input == "FILL"){
-//
-//            phone_book[i++].setContact("titi", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-//
-//            phone_book[i++].setContact("tata", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-//
-//            phone_book[i++].setContact("toto", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-//            phone_book[i++].setContact("tutu", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-//            phone_book[i++].setContact("flo", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-//            phone_book[i++].setContact("malo", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-//            phone_book[i++].setContact("mathieu", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-//            phone_book[i++].setContact("jududu", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-//        }
-        else{
-            std::cout << "Command must be one of the following : 'EXIT', 'SEARCH' or 'ADD'." <<std::endl;
+        else if (input == "FILL"){
+
+            phone_book[i++].setContact("titi", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+
+            phone_book[i++].setContact("tata", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+
+            phone_book[i++].setContact("toto", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+            phone_book[i++].setContact("tutu", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+            phone_book[i++].setContact("flo", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+            phone_book[i++].setContact("malo", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+            phone_book[i++].setContact("mathieu", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+            phone_book[i++].setContact("jududu", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
         }
+        else{
+            std::cout << "Command must be one of the following : 'EXIT', 'SEARCH' or 'ADD'." << std::endl;
+        }
+        std::cin.clear();
     }
 
     return 0;
