@@ -16,7 +16,7 @@ This first module of C++ is designed to help you understand the specifities of t
 |:--------:|:----------------------:|:----------------:|
 | 00       | Megaphone              |:heavy_check_mark:|
 | 01       | My Awesome PhoneBook   |:heavy_check_mark:|
-| 02       | The Job Of Your Dreams |                  |
+| 02       | The Job Of Your Dreams |:heavy_check_mark:|
 
 ## Module 01
 
