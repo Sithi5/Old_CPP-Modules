@@ -1,9 +1,5 @@
 #include <iostream>
-#include <ctype.h>
-#include <string>
 #include "contact.hpp"
-#include <stdio.h>
-#include <stdlib.h>
 #include "sstream"
 
 void print_with_width(std::string str, int width){
@@ -41,17 +37,6 @@ int main(void){
                 continue;
             }
 
-            std::string first_name;
-            std::string last_name;
-            std::string nickname;
-            std::string login;
-            std::string postal_address;
-            std::string email_address;
-            std::string phone_number;
-            std::string birthday_date;
-            std::string favorite_meal;
-            std::string underwear_color;
-            std::string darkest_secret;
             std::string input_string[11] = {
                     "first name",
                     "last name",
@@ -100,17 +85,10 @@ int main(void){
                     print_formated_contact_info(display_last_name);
                     print_formated_contact_info(display_nickname);
                     std::cout << std::endl;
-
-
-
-//                    std::cout << display_first_name << display_last_name << display_nickname;
-
-
                 }
             }
 
             std::cout << "Which contact do you want to display ? " << std::endl;
-
             std::getline(std::cin, input);
             std::stringstream ss(input);
             if ((ss >> research_id).fail()){
@@ -125,16 +103,16 @@ int main(void){
                 phone_book[research_id].display();
             }
         }
-        else if (input == "FILL"){
-            phone_book[i++].setContact("tititititi", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-            phone_book[i++].setContact("ratatatatatatatatatatatatatata", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-            phone_book[i++].setContact("toto", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-            phone_book[i++].setContact("MINET", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-            phone_book[i++].setContact("flo", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-            phone_book[i++].setContact("malo", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-            phone_book[i++].setContact("mathieu", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-            phone_book[i++].setContact("jududu", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-        }
+//        else if (input == "FILL"){
+//            phone_book[i++].setContact("tititititi", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+//            phone_book[i++].setContact("ratatatatatatatatatatatatatata", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+//            phone_book[i++].setContact("toto", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+//            phone_book[i++].setContact("MINET", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+//            phone_book[i++].setContact("flo", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+//            phone_book[i++].setContact("malo", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+//            phone_book[i++].setContact("mathieu", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+//            phone_book[i++].setContact("jududu", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+//        }
         else{
             std::cout << "Command must be one of the following : 'EXIT', 'SEARCH' or 'ADD'." << std::endl;
         }

@@ -1,7 +1,6 @@
 #include "contact.hpp"
 
 contact::contact(void): _set(0){
-    std::cout << "A contact have been created." << std::endl;
 }
 
 contact::~contact(){
