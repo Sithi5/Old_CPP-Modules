@@ -1,7 +1,3 @@
-//
-// Created by MaSit on 22/02/2021.
-//
-
 #include "contact.hpp"
 
 contact::contact(void): _set(0){

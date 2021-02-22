@@ -1,7 +1,3 @@
-//
-// Created by MaSit on 22/02/2021.
-//
-
 #include <iostream>
 #include <ctype.h>
 #include <string>
