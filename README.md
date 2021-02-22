@@ -13,11 +13,13 @@ This first module of C++ is designed to help you understand the specifities of t
 ## Module 00
 
 <center>
+
 | Exercise | Name | Finished |
 |:--------:|:----------------------:|:----------------:|
 | 00       | Megaphone              |:heavy_check_mark:|
 | 01       | My Awesome PhoneBook   |:heavy_check_mark:|
 | 02       | The Job Of Your Dreams |                  |
+
 </center>
 
 ## Module 01
