@@ -13,7 +13,7 @@ This first module of C++ is designed to help you understand the specifities of t
 ## Module 00
 
 | Exercise | Name | Finished |
-|----------|------------------------|:----------------:|
+|:--------:|:----------------------:|:----------------:|
 | 00       | Megaphone              |:heavy_check_mark:|
 | 01       | My Awesome PhoneBook   |:heavy_check_mark:|
 | 02       | The Job Of Your Dreams |                  |
@@ -22,7 +22,7 @@ This first module of C++ is designed to help you understand the specifities of t
 ## Module 01
 
 | Exercise | Name | Finished |
-|----------|------------------------------------|:----------------:|
+|:--------:|:----------------------------------:|:----------------:|
 | 00       | Heap of quadrupeds                 |                  |
 | 01       | Plumbing problem                   |                  |
 | 02       | Plucking some brains               |                  |
@@ -38,7 +38,7 @@ This first module of C++ is designed to help you understand the specifities of t
 ## Module 02
 
 | Exercise | Name | Finished |
-|----------|-----------------------------------------|:----------------:|
+|:--------:|:---------------------------------------:|:----------------:|
 | 00       | My First Canonical Class                |                  |
 | 01       | Towards a more useful fixed point class |                  |
 | 02       | Now we’re talking                       |                  |
@@ -47,7 +47,7 @@ This first module of C++ is designed to help you understand the specifities of t
 ## Module 03
 
 | Exercise | Name | Finished |
-|----------|:----------------:|------------------|
+|:--------:|:----------------:|:----------------:|
 | 00       | Aaaaand... OPEN! |                  |
 | 01       | Serena, my love! |                  |
 | 02       | Repetitive work  |                  |
@@ -57,7 +57,7 @@ This first module of C++ is designed to help you understand the specifities of t
 ## Module 04
 
 | Exercise | Name | Finished |
-|----------|-----------------------------------------------------------------------------|:----------------:|
+|:--------:|:---------------------------------------------------------------------------:|:----------------:|
 | 00       | Polymorphism, or "When the sorcerer thinks <br/> you’d be cuter as a sheep" |                  |
 | 01       | I don’t want to set the world on fire                                       |                  |
 | 02       | This code is unclean. PURIFY IT!                                            |                  |
@@ -67,7 +67,7 @@ This first module of C++ is designed to help you understand the specifities of t
 ## Module 05
 
 | Exercise | Name | Finished |
-|----------|--------------------------------------------------|:----------------:|
+|:--------:|:------------------------------------------------:|:----------------:|
 | 00       |Mommy, when I grow up, I want to be a bureaucrat! |                  |
 | 01       | Form up, maggots!                                |                  |
 | 02       | No, you need form 28B, not 28C...                |                  |
@@ -78,7 +78,7 @@ This first module of C++ is designed to help you understand the specifities of t
 ## Module 06
 
 | Exercise | Name | Finished |
-|----------|--------------------|:----------------:|
+|:--------:|:------------------:|:----------------:|
 | 00       | Scalar conversion  |                  |
 | 01       | Serialization      |                  |
 | 02       | Identify real type |                  |
@@ -86,7 +86,7 @@ This first module of C++ is designed to help you understand the specifities of t
 ## Module 07
 
 | Exercise | Name | Finished |
-|----------|-----------------|:----------------:|
+|:--------:|:---------------:|:----------------:|
 | 00       | A few functions |                  |
 | 01       | Iter            |                  |
 | 02       | Array           |                  |
@@ -94,7 +94,7 @@ This first module of C++ is designed to help you understand the specifities of t
 ## Module 08
 
 | Exercise | Name | Finished |
-|----------|------------------------------------------|:----------------:|
+|:--------:|:----------------------------------------:|:----------------:|
 | 00       | Easy find                                |                  |
 | 01       | Span                                     |                  |
 | 02       | Mutated abomination                      |                  |
