@@ -30,16 +30,16 @@ std::string underwear_color,std::string darkest_secret){
 
 void contact::display(){
     if (this->isSet()){
-        std::cout << this->_first_name << std::endl;
-        std::cout << this->_last_name << std::endl;
-        std::cout << this->_login << std::endl;
-        std::cout << this->_postal_address << std::endl;
-        std::cout << this->_email_address << std::endl;
-        std::cout << this->_phone_number << std::endl;
-        std::cout << this->_birthday_date << std::endl;
-        std::cout << this->_favorite_meal << std::endl;
-        std::cout << this->_underwear_color << std::endl;
-        std::cout << this->_darkest_secret << std::endl;
+        std::cout << "first_name = " << this->_first_name << std::endl;
+        std::cout << "last_name = " << this->_last_name << std::endl;
+        std::cout << "login = " << this->_login << std::endl;
+        std::cout << "postal_address = " << this->_postal_address << std::endl;
+        std::cout << "email_address = " << this->_email_address << std::endl;
+        std::cout << "phone_number = " << this->_phone_number << std::endl;
+        std::cout << "birthday_date = " << this->_birthday_date << std::endl;
+        std::cout << "favorite_meal = " << this->_favorite_meal << std::endl;
+        std::cout << "underwear_color = " << this->_underwear_color << std::endl;
+        std::cout << "darkest_secret = " << this->_darkest_secret << std::endl;
     }
 }
 

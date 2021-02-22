@@ -17,9 +17,9 @@ DEBUG				=	no
 O2					=	no
 
 ifeq ($(UNAME), Linux)
-	CC					:=	clang++
+	CC					:=	clang++ -std=c++98
 else
-	CC					:=	clang++
+	CC					:=	clang++ -std=c++98
 endif
 GEN					:=	"Generation in mode"
 

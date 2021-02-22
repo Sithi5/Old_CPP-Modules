@@ -8,6 +8,7 @@
 #include "contact.hpp"
 #include <stdio.h>
 #include <stdlib.h>
+#include "sstream"
 
 void print_with_width(std::string str, int width){
     std::cout.width(width);
@@ -18,6 +19,7 @@ void print_with_width(std::string str, int width){
 void print_formated_contact_info(std::string str){
     if (str.size() >= 10){
         str.resize(9);
+        str.append(".");
     }
     str.append("|");
     print_with_width(str, 11);
@@ -33,7 +35,7 @@ int main(void){
         std::cout << "Waiting for commands : ['EXIT', 'SEARCH', 'ADD']." << std::endl;
         std::cout << "input: ";
 
-        std::cin >> input;
+        std::getline(std::cin ,input);
         if (input == "EXIT"){
             break;
         }
@@ -54,46 +56,33 @@ int main(void){
             std::string favorite_meal;
             std::string underwear_color;
             std::string darkest_secret;
+            std::string input_string[11] = {
+                    "first name",
+                    "last name",
+                    "nickname",
+                    "login",
+                    "postal_address",
+                    "email_address",
+                    "phone_number",
+                    "birthday_date",
+                    "favorite_meal",
+                    "underwear_color",
+                    "darkest_secret"
+            };
+            std::string input[11];
 
-            std::cout << "first name: " << std::endl << "input: ";
-            std::cin >> first_name;
+            for (int i = 0 ; i < 11; ++i){
+                  std::cout << input_string[i] << ": " << std::endl;
+                  std::cout << "input: ";
+                  std::getline(std::cin, input[i]);
+            }
 
-            std::cout << "last name: " << std::endl << "input: ";
-            std::cin >> last_name;
-
-            std::cout << "nickname: " << std::endl << "input: ";
-            std::cin >> nickname;
-
-            std::cout << "login: " << std::endl << "input: ";
-            std::cin >> login;
-
-            std::cout << "postal_address: " << std::endl << "input: ";
-            std::cin >> postal_address;
-
-            std::cout << "email_address: " << std::endl << "input: ";
-            std::cin >> email_address;
-
-            std::cout << "phone_number: " << std::endl << "input: ";
-            std::cin >> phone_number;
-
-            std::cout << "birthday_date: " << std::endl << "input: ";
-            std::cin >> birthday_date;
-
-            std::cout << "favorite_meal: " << std::endl << "input: ";
-            std::cin >> favorite_meal;
-
-            std::cout << "underwear_color: " << std::endl << "input: ";
-            std::cin >> underwear_color;
-
-            std::cout << "darkest_secret: " << std::endl << "input: ";
-            std::cin >> darkest_secret;
-
-            phone_book[i].setContact(first_name, last_name, nickname, login, postal_address, email_address, phone_number, birthday_date, favorite_meal, underwear_color, darkest_secret);
-            std::cout << "Contact " << first_name << " has been created with the following info : " << std::endl;
+            phone_book[i].setContact(input[0], input[1], input[2], input[3], input[4], input[5], input[6], input[7], input[8], input[9], input[10]);
+            std::cout << "Contact " << input[0] << " has been created with the following info : " << std::endl;
             phone_book[i++].display();
         }
         else if (input == "SEARCH"){
-            int research_id;
+            int research_id = -1;
             std::string display_first_name;
             std::string display_last_name;
             std::string display_nickname;
@@ -125,8 +114,14 @@ int main(void){
             }
 
             std::cout << "Which contact do you want to display ? " << std::endl;
-            std::cin >> research_id;
-            if (std::cin.fail() || research_id > 7 || research_id < 0 || !phone_book[research_id].isSet()){
+
+            std::getline(std::cin, input);
+            std::stringstream ss(input);
+            if ((ss >> research_id).fail()){
+                research_id = -1;
+            }
+            std::cout << "id = " << research_id <<std::endl;
+            if (research_id > 7 || research_id < 0 || !phone_book[research_id].isSet()){
                 std::cout << "Invalid Id." << std::endl;
             }
             else{
@@ -135,13 +130,10 @@ int main(void){
             }
         }
         else if (input == "FILL"){
-
-            phone_book[i++].setContact("titi", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-
-            phone_book[i++].setContact("tata", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-
+            phone_book[i++].setContact("tititititi", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+            phone_book[i++].setContact("ratatatatatatatatatatatatatata", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
             phone_book[i++].setContact("toto", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
-            phone_book[i++].setContact("tutu", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
+            phone_book[i++].setContact("MINET", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
             phone_book[i++].setContact("flo", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
             phone_book[i++].setContact("malo", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
             phone_book[i++].setContact("mathieu", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t");
