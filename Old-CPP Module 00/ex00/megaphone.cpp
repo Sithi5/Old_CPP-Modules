@@ -16,7 +16,7 @@ int main(int ac, char *av[]){
             arg[j] = toupper(arg[j]);
         }
         std::cout << arg;
-        if (size_t (i) + 1 < arg.length()){
+        if (i + 1 < ac){
             std::cout << " ";
         }
     }
