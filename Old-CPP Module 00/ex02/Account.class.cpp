@@ -8,8 +8,6 @@ int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
-int Account::_totalCheckAmountNumber = 0;
-
 
 Account::Account(int initial_deposit)
     : _accountIndex(Account::_nbAccounts++), _amount(initial_deposit){
@@ -80,7 +78,6 @@ bool Account::makeWithdrawal(int withdrawal) {
 }
 
 int Account::checkAmount() const {
-    Account::_totalCheckAmountNumber++;
     return (this->_amount > 0);
 }
 
