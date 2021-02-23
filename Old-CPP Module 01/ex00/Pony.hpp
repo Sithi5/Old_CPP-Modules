@@ -6,7 +6,7 @@
 class Pony {
 public:
     Pony(std::string name, std::string color, int age, std::string death);
-    ~Pony();
+    ~Pony(void);
     void talk(void) const;
 
 private:
