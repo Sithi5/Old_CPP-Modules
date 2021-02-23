@@ -5,9 +5,16 @@
 
 class Zombie {
 public:
-    Zombie(std::string type, std::string name);
+    Zombie(std::string name, std::string type = "default");
     ~Zombie(void);
-    void announce(void) const;
+
+    void setType(std::string type);
+    void setName(std::string name);
+
+    std::string getType(void);
+    std::string getName(void);
+
+    void advert(void) const;
 private:
     std::string _type;
     std::string _name;
