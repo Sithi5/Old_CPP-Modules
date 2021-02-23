@@ -3,23 +3,23 @@
 
 #include <iostream>
 
-class Zombie {
+class Zombie
+{
 public:
-    Zombie(std::string name, std::string type = "default");
-    ~Zombie(void);
+	Zombie(std::string name, std::string type = "default");
+	~Zombie(void);
 
-    void setType(std::string type);
-    void setName(std::string name);
+	void setType(std::string type);
+	void setName(std::string name);
 
-    std::string getType(void);
-    std::string getName(void);
+	std::string getType(void);
+	std::string getName(void);
 
-    void advert(void) const;
+	void advert(void) const;
+
 private:
-    std::string _type;
-    std::string _name;
-
+	std::string _type;
+	std::string _name;
 };
-
 
 #endif //OLD_CPP_MODULES_ZOMBIE_HPP
