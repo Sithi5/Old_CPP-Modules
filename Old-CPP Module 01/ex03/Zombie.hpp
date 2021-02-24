@@ -1,7 +1,7 @@
 #ifndef OLD_CPP_MODULES_ZOMBIE_HPP
-#define OLD_CPP_MODULES_ZOMBIE_HPP
+# define OLD_CPP_MODULES_ZOMBIE_HPP
 
-#include <iostream>
+# include <iostream>
 
 class Zombie
 {
