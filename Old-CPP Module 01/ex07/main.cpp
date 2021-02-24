@@ -36,7 +36,7 @@ int     main(int ac, char **av)
             std::ifstream ifs(av[1]);
             std::ofstream ofs((std::string(av[1]) + ".replace").c_str());
             if (!ifs.is_open() || !ofs.is_open()) {
-                throw std::runtime_error("replace or search argument should not be empty.");
+                throw std::runtime_error("error when opening a file.");
             }
             if (strcmp(av[2], "") == 0 || strcmp(av[3], "") == 0){
                 throw std::runtime_error("replace or search argument should not be empty.");
