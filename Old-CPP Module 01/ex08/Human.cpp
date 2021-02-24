@@ -16,18 +16,20 @@ void Human::intimidatingShout(std::string const & target){
 }
 
 void Human::action(std::string const & action_name, std::string const & target){
-    void (Human::*p[3])(std::string const & target);
-    std::string key[3];
-    p[0] = &Human::meleeAttack;
-    key[0] = "meleeAttack";
-    p[1] = &Human::rangedAttack;
-    key[1] = "rangedAttack";
-    p[2] = &Human::intimidatingShout;
-    key[2] = "intimidatingShout";
+    void (Human::*p[3])(std::string const & target) = {
+            &Human::meleeAttack,
+            &Human::rangedAttack,
+            &Human::intimidatingShout
+    };
+    std::string key[3] = {
+            "meleeAttack",
+            "rangedAttack",
+            "intimidatingShout"
+    };
     int key_size = sizeof(key) / sizeof(*key);
 
     for(int i = 0; i < key_size; i++){
-        if (key[i] == action_name){
+        if (!key[i].compare(action_name)){
             (this->*p[i])(target);
             return;
         }
