@@ -1,7 +1,3 @@
-//
-// Created by MaSit on 25/02/2021.
-//
-
 #ifndef OLD_CPP_MODULE_FIXED_HPP
 #define OLD_CPP_MODULE_FIXED_HPP
 
@@ -20,10 +16,8 @@ public:
 
 private:
     int _value;
-    int const static _rawBits = 8;
-
+    int const static _nb_bits = 8;
 
 };
-
 
 #endif //OLD_CPP_MODULE_FIXED_HPP

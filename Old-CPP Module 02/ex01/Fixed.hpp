@@ -18,15 +18,15 @@ public:
     Fixed & operator=(Fixed const & rhs);
 
     int getRawBits() const;
-    void setRawBits(int const raw);
+    void setRawBits(int const value);
 
     float toFloat(void) const;
     int toInt(void) const;
 
 
 private:
-    int _value;
-    int const static _rawBits = 8;
+    int _fixed_value;
+    int const static _nb_bits = 8;
 
 
 };

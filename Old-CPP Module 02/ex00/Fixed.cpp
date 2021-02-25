@@ -1,7 +1,3 @@
-//
-// Created by MaSit on 25/02/2021.
-//
-
 #include "Fixed.hpp"
 
 Fixed::Fixed(void): _value(0) {
