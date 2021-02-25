@@ -12,9 +12,9 @@ public:
     Fixed(void);
     Fixed(const int value);
     Fixed(const float value);
+    Fixed(Fixed const &copy);
     virtual ~Fixed(void);
 
-    Fixed(Fixed const &src);
     Fixed & operator=(Fixed const & rhs);
 
     int getRawBits() const;
@@ -23,7 +23,6 @@ public:
     float toFloat(void) const;
     int toInt(void) const;
 
-    std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
 
 private:
     int _value;
@@ -32,5 +31,6 @@ private:
 
 };
 
+std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
 
 #endif //OLD_CPP_MODULE_FIXED_HPP
