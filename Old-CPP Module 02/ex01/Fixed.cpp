@@ -4,7 +4,7 @@
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(void): _fixed_value(0) {
+Fixed::Fixed(void): _fixedPointValue(0) {
     std::cout << "Default constructor called" << std::endl;
 }
 
@@ -40,11 +40,11 @@ Fixed &Fixed::operator=(const Fixed &rhs) {
 
 int Fixed::getRawBits() const {
     std::cout << "getRawBits member function called" << std::endl;
-    return this->_fixed_value;
+    return this->_fixedPointValue;
 }
 
 void Fixed::setRawBits(const int value) {
-    this->_fixed_value = value;
+    this->_fixedPointValue = value;
 }
 
 float Fixed::toFloat(void) const {

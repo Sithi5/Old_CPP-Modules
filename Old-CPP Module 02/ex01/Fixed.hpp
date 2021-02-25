@@ -25,8 +25,8 @@ public:
 
 
 private:
-    int _fixed_value;
-    int const static _nb_bits = 8;
+    int _fixedPointValue;
+    int const static _fractBits = 8;
 
 
 };

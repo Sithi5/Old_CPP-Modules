@@ -12,11 +12,11 @@ public:
     Fixed & operator=(Fixed const & rhs);
 
     int getRawBits() const;
-    void setRawBits(int const raw);
+    void setRawBits(int const value);
 
 private:
-    int _value;
-    int const static _nb_bits = 8;
+    int _fixedPointValue;
+    int const static _fractBits = 8;
 
 };
 
