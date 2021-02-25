@@ -1,7 +1,3 @@
-//
-// Created by MaSit on 25/02/2021.
-//
-
 #ifndef OLD_CPP_MODULE_FIXED_HPP
 #define OLD_CPP_MODULE_FIXED_HPP
 
