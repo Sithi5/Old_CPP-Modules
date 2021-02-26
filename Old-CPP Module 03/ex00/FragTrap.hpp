@@ -22,6 +22,10 @@ public:
 
     void setMaxHitPoints(unsigned int maxHitPoints);
 
+    unsigned int getMaxEnergyPoints() const;
+
+    void setMaxEnergyPoints(unsigned int maxEnergyPoints);
+
     unsigned int getEnergyPoints() const;
 
     void setEnergyPoints(unsigned int energyPoints);
@@ -64,17 +68,14 @@ protected:
     unsigned int _max_hit_points;
     unsigned int _energy_points;
     unsigned int _max_energy_points;
-public:
-    unsigned int getMaxEnergyPoints() const;
-
-    void setMaxEnergyPoints(unsigned int maxEnergyPoints);
-
-protected:
     unsigned int _level;
     std::string _name;
     unsigned int _melee_attack;
     unsigned int _ranged_attack;
     unsigned int _armor_damage_reduction;
+
+
+
 };
 
 
