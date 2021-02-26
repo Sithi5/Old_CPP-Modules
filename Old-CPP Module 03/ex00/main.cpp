@@ -3,6 +3,7 @@
 
 int main(void) {
     srand (time(NULL));
+    int random_num;
 
     FragTrap mathieu = FragTrap("Mathieu");
     FragTrap jududu = FragTrap("Jududu");
@@ -18,6 +19,10 @@ int main(void) {
     mathieu.beRepaired((unsigned int)1500);
     jududu.beRepaired((unsigned int)1500);
 
+    std::cout << std::endl;
+    std::cout << "Bienvenue dans l'arene peuple de la cité impérial ! Pour ce match, nous avons de la chair fraiche, deux nouveaux chiens ! Alors ne perdons pas de temps ! Que la bataille... commence !" << std::endl;
+    std::cout << std::endl;
+
     while(mathieu.getHitPoints() > 0 and jududu.getHitPoints() > (unsigned int)0){
         std::cout << mathieu.getName() << " a " << mathieu.getHitPoints() << " point de vie." << std::endl;
         std::cout << mathieu.getName() << " a " << mathieu.getEnergyPoints() << " point d'energie." << std::endl;
@@ -25,20 +30,31 @@ int main(void) {
         std::cout << jududu.getName() << " a " << jududu.getHitPoints() << " point de vie." << std::endl;
         std::cout << jududu.getName() << " a " << jududu.getEnergyPoints() << " point d'energie." << std::endl;
 
-        if (mathieu.getEnergyPoints() >= (unsigned int)25){
+        random_num = rand() %6;
+        if (random_num < 4){
             jududu.takeDamage(mathieu.vaulthunter_dot_exe("Jududu"));
 
         }
-        else{
-            mathieu.chargingBattery((unsigned int)rand() % 100 + 15);
+        else if (random_num == 4){
+            mathieu.beRepaired((unsigned int)rand() % 40 + 15);
         }
-        if (jududu.getEnergyPoints() >= (unsigned int)25) {
-            mathieu.takeDamage(jududu.vaulthunter_dot_exe("Mathieu"));
+        else{
+            mathieu.chargingBattery((unsigned int)rand() % 40 + 15);
+        }
+
+        random_num = rand() %6;
+
+        if (random_num < 4){
+            mathieu.takeDamage(jududu.vaulthunter_dot_exe("Jududu"));
 
         }
-        else{
-            jududu.chargingBattery((unsigned int)rand() % 100 + 15);
+        else if (random_num == 4){
+            jududu.beRepaired((unsigned int)rand() % 40 + 15);
         }
+        else{
+            jududu.chargingBattery((unsigned int)rand() % 40 + 15);
+        }
+    
         std::cout << std::endl;
     }
     if (mathieu.getHitPoints() > (unsigned int)0){
@@ -47,5 +63,7 @@ int main(void) {
     else{
         std::cout << "Bonnes gens, nous avons un vainqueur ! Que tout le monde salue le combattant " << jududu.getName() << " ! Vainqueur, quittez l'arène et allez vous reposez ! Vous l'avez bien mérité !" << std::endl;
     }
+    std::cout << std::endl;
+
     return 0;
 }
