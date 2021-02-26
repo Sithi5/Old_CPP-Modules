@@ -113,8 +113,8 @@ unsigned int FragTrap::echappementCryogénique(const std::string &target) const 
         return 0;
     }
     else{
-        std::cout << "FR4G-TP <" << this->_name << "> " << "attaque <" << target << "> " << "avec Échappement cryogénique, causant <" << this->getMeleeAttack() * 1.5 << "> " << "points de dégâts !" << std::endl;
-        return this->getMeleeAttack() * 1.5;
+        std::cout << "FR4G-TP <" << this->_name << "> " << "attaque <" << target << "> " << "avec Échappement cryogénique, causant <" << this->getMeleeAttack() * 1 << "> " << "points de dégâts !" << std::endl;
+        return this->getMeleeAttack() * 1;
     }
 }
 
@@ -135,8 +135,8 @@ unsigned int FragTrap::grenadeDeLaColere(const std::string &target) const {
         return 0;
     }
     else{
-        std::cout << "FR4G-TP <" << this->_name << "> " << "attaque <" << target << "> " << "avec Grenade de la colère, causant <" << this->getRangedAttack() * 2 << "> " << "points de dégâts !" << std::endl;
-        return this->getRangedAttack() * 2;
+        std::cout << "FR4G-TP <" << this->_name << "> " << "attaque <" << target << "> " << "avec Grenade de la colère, causant <" << this->getRangedAttack() * 1 << "> " << "points de dégâts !" << std::endl;
+        return this->getRangedAttack() * 1;
     }
 }
 
@@ -157,8 +157,8 @@ unsigned int FragTrap::punchDHyperion(const std::string &target) const {
         return 0;
     }
     else{
-        std::cout << "FR4G-TP <" << this->_name << "> " << "attaque <" << target << "> " << "avec Punch d'Hyperion, causant <" << this->getRangedAttack() * 1.5 << "> " << "points de dégâts !" << std::endl;
-        return this->getRangedAttack() * 1.5;
+        std::cout << "FR4G-TP <" << this->_name << "> " << "attaque <" << target << "> " << "avec Punch d'Hyperion, causant <" << this->getRangedAttack() * 0.5 << "> " << "points de dégâts !" << std::endl;
+        return this->getRangedAttack() * 0.5;
     }
 }
 
