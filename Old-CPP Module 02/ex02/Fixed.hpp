@@ -40,11 +40,11 @@ private:
     int const static _fractBits = 8;
 };
 
-int &max(int &a, int &b);
-const int &max(const int &a, const int &b);
+Fixed &max(Fixed &a, Fixed &b);
+const Fixed &max(const Fixed &a, const Fixed &b);
 
-int &min(int &a, int &b);
-const int &min(const int &a, const int &b);
+Fixed &min(Fixed &a, Fixed &b);
+const Fixed &min(const Fixed &a, const Fixed &b);
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
 

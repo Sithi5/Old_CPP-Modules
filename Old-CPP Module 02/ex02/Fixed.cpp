@@ -111,7 +111,6 @@ Fixed   Fixed::operator--(int){
 }
 
 int Fixed::getRawBits() const {
-    std::cout << "getRawBits member function called" << std::endl;
     return this->_fixedPointValue;
 }
 
@@ -126,25 +125,24 @@ int Fixed::toInt(void) const {
     return (this->_fixedPointValue >> this->_fractBits);
 }
 
-
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed) {
     os << fixed.getRawBits();
     return os;
 }
 
-int &max(int &a, int &b) {
+Fixed &max(Fixed &a, Fixed &b) {
     return a < b ? b : a;
 }
 
-const int &max(const int &a, const int &b) {
+const Fixed &max(const Fixed &a, const Fixed &b) {
     return a < b ? b : a;
 }
 
-int &min(int &a, int &b) {
+Fixed &min(Fixed &a, Fixed &b) {
     return a > b ? b : a;
 }
 
-const int &min(const int &a, const int &b) {
+const Fixed &min(const Fixed &a, const Fixed &b) {
     return a > b ? b : a;
 }
 
