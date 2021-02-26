@@ -114,7 +114,7 @@ unsigned int FragTrap::echappementCryogénique(const std::string &target) const 
     }
     else{
         std::cout << "FR4G-TP <" << this->_name << "> " << "attaque <" << target << "> " << "avec Échappement cryogénique, causant <" << this->getMeleeAttack() * 1.5 << "> " << "points de dégâts !" << std::endl;
-        return this->getMeleeAttack();
+        return this->getMeleeAttack() * 1.5;
     }
 }
 
@@ -125,7 +125,7 @@ unsigned int FragTrap::rireDiabolique(const std::string &target) const {
     }
     else{
         std::cout << "FR4G-TP <" << this->_name << "> " << "attaque <" << target << "> " << "avec Rire diabolique (Mouhahahahaha), causant <" << this->getMeleeAttack() * 0 << "> " << "points de dégâts !" << std::endl;
-        return this->getMeleeAttack();
+        return this->getMeleeAttack() * 0;
     }
 }
 
@@ -136,7 +136,7 @@ unsigned int FragTrap::grenadeDeLaColere(const std::string &target) const {
     }
     else{
         std::cout << "FR4G-TP <" << this->_name << "> " << "attaque <" << target << "> " << "avec Grenade de la colère, causant <" << this->getRangedAttack() * 2 << "> " << "points de dégâts !" << std::endl;
-        return this->getRangedAttack();
+        return this->getRangedAttack() * 2;
     }
 }
 
@@ -147,7 +147,7 @@ unsigned int FragTrap::machineDeMort(const std::string &target) const {
     }
     else{
         std::cout << "FR4G-TP <" << this->_name << "> " << "attaque <" << target << "> " << "avec Machine de mort, causant <" << this->getMeleeAttack() * 2 << "> " << "points de dégâts !" << std::endl;
-        return this->getMeleeAttack();
+        return this->getMeleeAttack() * 2;
     }
 }
 
@@ -158,7 +158,7 @@ unsigned int FragTrap::punchDHyperion(const std::string &target) const {
     }
     else{
         std::cout << "FR4G-TP <" << this->_name << "> " << "attaque <" << target << "> " << "avec Punch d'Hyperion, causant <" << this->getRangedAttack() * 1.5 << "> " << "points de dégâts !" << std::endl;
-        return this->getRangedAttack();
+        return this->getRangedAttack() * 1.5;
     }
 }
 
