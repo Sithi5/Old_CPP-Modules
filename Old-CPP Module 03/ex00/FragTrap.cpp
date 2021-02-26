@@ -180,7 +180,7 @@ void FragTrap::takeDamage(unsigned int amount) {
     }
     else{
         std::cout << "FR4G-TP <" << this->_name << "> " << "se fait frapper et reçoit <" << amount << "> point de dégats. Après réduction de l'armure, il pert : <" <<amount - this->getArmorDamageReduction() << "> " << "points de vie !" << std::endl;
-        if (this->getHitPoints() - (amount - this->getArmorDamageReduction()) > (unsigned int )0){
+        if (this->getHitPoints() > (amount - this->getArmorDamageReduction())){
             this->setHitPoints(this->getHitPoints() - (amount - this->getArmorDamageReduction()));
         }
         else{
