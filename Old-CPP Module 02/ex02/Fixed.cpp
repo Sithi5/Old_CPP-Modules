@@ -132,3 +132,19 @@ std::ostream &operator<<(std::ostream &os, const Fixed &fixed) {
     return os;
 }
 
+int &max(int &a, int &b) {
+    return a < b ? b : a;
+}
+
+const int &max(const int &a, const int &b) {
+    return a < b ? b : a;
+}
+
+int &min(int &a, int &b) {
+    return a > b ? b : a;
+}
+
+const int &min(const int &a, const int &b) {
+    return a > b ? b : a;
+}
+

@@ -40,6 +40,12 @@ private:
     int const static _fractBits = 8;
 };
 
+int &max(int &a, int &b);
+const int &max(const int &a, const int &b);
+
+int &min(int &a, int &b);
+const int &min(const int &a, const int &b);
+
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
 
 #endif //OLD_CPP_MODULE_FIXED_HPP
