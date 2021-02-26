@@ -45,7 +45,7 @@ int main(void) {
         random_num = rand() %6;
 
         if (random_num < 4){
-            mathieu.takeDamage(jududu.vaulthunter_dot_exe("Jududu"));
+            mathieu.takeDamage(jududu.vaulthunter_dot_exe("Mathieu"));
 
         }
         else if (random_num == 4){
@@ -54,7 +54,7 @@ int main(void) {
         else{
             jududu.chargingBattery((unsigned int)rand() % 40 + 15);
         }
-    
+
         std::cout << std::endl;
     }
     if (mathieu.getHitPoints() > (unsigned int)0){
