@@ -22,32 +22,32 @@ This first module of C++ is designed to help you understand the specifities of t
 
 | Exercise | Name | Finished |
 |:--------:|:----------------------------------:|:----------------:|
-| 00       | Heap of quadrupeds                 |                  |
-| 01       | Plumbing problem                   |                  |
-| 02       | Plucking some brains               |                  |
-| 03       | Moar brainz !                      |                  |
-| 04       | HI THIS IS BRAIN                   |                  |
-| 05       | HI BRAIN THIS IS HUMAN             |                  |
-| 06       | Unnecessary violence               |                  |
-| 07       | Sed is for losers                  |                  |
-| 08       | I ain’t heard of no fancy switches |                  |
-| 09       | Over logging                       |                  |
-| 10       | Cat o’ nine tails                  |                  |
+| 00       | Heap of quadrupeds                 |:heavy_check_mark:|
+| 01       | Plumbing problem                   |:heavy_check_mark:|
+| 02       | Plucking some brains               |:heavy_check_mark:|
+| 03       | Moar brainz !                      |:heavy_check_mark:|
+| 04       | HI THIS IS BRAIN                   |:heavy_check_mark:|
+| 05       | HI BRAIN THIS IS HUMAN             |:heavy_check_mark:|
+| 06       | Unnecessary violence               |:heavy_check_mark:|
+| 07       | Sed is for losers                  |:heavy_check_mark:|
+| 08       | I ain’t heard of no fancy switches |:heavy_check_mark:|
+| 09       | Over logging                       |:heavy_check_mark:|
+| 10       | Cat o’ nine tails                  |:heavy_check_mark:|
 
 ## Module 02
 
 | Exercise | Name | Finished |
 |:--------:|:---------------------------------------:|:----------------:|
-| 00       | My First Canonical Class                |                  |
-| 01       | Towards a more useful fixed point class |                  |
-| 02       | Now we’re talking                       |                  |
+| 00       | My First Canonical Class                |:heavy_check_mark:|
+| 01       | Towards a more useful fixed point class |:heavy_check_mark:|
+| 02       | Now we’re talking                       |:heavy_check_mark:|
 | 03       | Fixed point expressions                 |                  |
 
 ## Module 03
 
 | Exercise | Name | Finished |
 |:--------:|:----------------:|:----------------:|
-| 00       | Aaaaand... OPEN! |                  |
+| 00       | Aaaaand... OPEN! |:heavy_check_mark:|
 | 01       | Serena, my love! |                  |
 | 02       | Repetitive work  |                  |
 | 03       | Now it’s easier! |                  |
