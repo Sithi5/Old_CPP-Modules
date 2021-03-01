@@ -1,7 +1,3 @@
-//
-// Created by MaSit on 26/02/2021.
-//
-
 #ifndef TEST_FRAGTRAP_HPP
 #define TEST_FRAGTRAP_HPP
 
@@ -11,8 +7,12 @@
 
 class FragTrap{
 public:
-    FragTrap(const std::string &name);
+    FragTrap(void);
+    FragTrap(std::string const &name);
+    FragTrap(FragTrap const &src);
     ~FragTrap();
+
+    FragTrap & operator=(FragTrap const &rhs);
 
     unsigned int getHitPoints() const;
 
@@ -73,10 +73,6 @@ protected:
     unsigned int _melee_attack;
     unsigned int _ranged_attack;
     unsigned int _armor_damage_reduction;
-
-
-
 };
 
-
-#endif //TEST_FRAGTRAP_HPP
+#endif
