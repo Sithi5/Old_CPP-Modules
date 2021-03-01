@@ -7,8 +7,8 @@
 
 class ClapTrap {
 public:
-    explicit ClapTrap(void);
-    explicit ClapTrap(std::string const &name);
+    ClapTrap(void);
+    ClapTrap(std::string const &name);
     ClapTrap(ClapTrap const &src);
     ~ClapTrap();
 
