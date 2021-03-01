@@ -1,15 +1,15 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(void)
-    : _hit_points((unsigned int)100), _max_hit_points((unsigned int)100),_energy_points((unsigned int)100), _max_energy_points((unsigned int)100),_level((unsigned int)1), _name("default"),_melee_attack((unsigned int)30),
-    _ranged_attack((unsigned int)20),_armor_damage_reduction((unsigned int)5) {
+    : _hit_points((unsigned int)100), _max_hit_points((unsigned int)100),_energy_points((unsigned int)100), _max_energy_points((unsigned int)100),
+    _level((unsigned int)1), _name("default"),_melee_attack((unsigned int)30), _ranged_attack((unsigned int)20),_armor_damage_reduction((unsigned int)5) {
     srand (time(NULL));
     std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
 }
 
 FragTrap::FragTrap(std::string const &name)
-    : _hit_points((unsigned int)100), _max_hit_points((unsigned int)100),_energy_points((unsigned int)100), _max_energy_points((unsigned int)100),_level((unsigned int)1), _name(name),_melee_attack((unsigned int)30),
-    _ranged_attack((unsigned int)20),_armor_damage_reduction((unsigned int)5) {
+    : _hit_points((unsigned int)100), _max_hit_points((unsigned int)100),_energy_points((unsigned int)100), _max_energy_points((unsigned int)100),
+    _level((unsigned int)1), _name(name),_melee_attack((unsigned int)30), _ranged_attack((unsigned int)20),_armor_damage_reduction((unsigned int)5) {
     srand (time(NULL));
     std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
 }
