@@ -2,6 +2,7 @@
 
 NinjaTrap::NinjaTrap(void)
     : ClapTrap() {
+    this->setHitPoints(60);
     this->setMaxHitPoints(60);
     this->setMaxEnergyPoints(120);
     this->setEnergyPoints(120);
@@ -13,12 +14,14 @@ NinjaTrap::NinjaTrap(void)
 
 NinjaTrap::NinjaTrap(std::string const &name)
     : ClapTrap(name) {
+    this->setHitPoints(60);
     this->setMaxHitPoints(60);
     this->setMaxEnergyPoints(120);
     this->setEnergyPoints(120);
     this->setArmorDamageReduction(0);
     this->setMeleeAttack(60);
     this->setRangedAttack(5);
+    std::cout << this->getHitPoints();
     std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
 }
 
