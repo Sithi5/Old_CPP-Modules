@@ -1,29 +1,35 @@
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap(void) 
-    :  FragTrap(), NinjaTrap() {
-    this->setHitPoints(FragTrap::getHitPoints());
-    this->setMaxHitPoints(FragTrap::getMaxHitPoints());
-    this->setMaxEnergyPoints(NinjaTrap::getMaxEnergyPoints());
-    this->setEnergyPoints(NinjaTrap::getEnergyPoints());
-    this->setArmorDamageReduction(FragTrap::getArmorDamageReduction());
-    this->setMeleeAttack(NinjaTrap::getMeleeAttack());
-    this->setRangedAttack(FragTrap::getRangedAttack());
-    std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
+SuperTrap::SuperTrap(void)
+    : ClapTrap() {
+    this->setHitPoints(100);
+    this->setMaxHitPoints(100);
+    this->setMaxEnergyPoints(120);
+    this->setEnergyPoints(120);
+    this->setArmorDamageReduction(5);
+    this->setMeleeAttack(60);
+    this->setRangedAttack(20);
 }
 
 SuperTrap::SuperTrap(std::string const &name) 
-    : FragTrap(name), NinjaTrap(name) {
-    this->setHitPoints(FragTrap::getHitPoints());
-    this->setMaxHitPoints(FragTrap::getMaxHitPoints());
-    this->setMaxEnergyPoints(NinjaTrap::getMaxEnergyPoints());
-    this->setEnergyPoints(NinjaTrap::getEnergyPoints());
-    this->setArmorDamageReduction(FragTrap::getArmorDamageReduction());
-    this->setMeleeAttack(NinjaTrap::getMeleeAttack());
-    this->setRangedAttack(FragTrap::getRangedAttack());
-    std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
+    : ClapTrap(name) {
+    this->setHitPoints(100);
+    this->setMaxHitPoints(100);
+    this->setMaxEnergyPoints(120);
+    this->setEnergyPoints(120);
+    this->setArmorDamageReduction(5);
+    this->setMeleeAttack(60);
+    this->setRangedAttack(20);
 }
 
-SuperTrap::~SuperTrap() {
-    std::cout << this->getName() << " meurt et dit : " << "Est-ce que ça veut dire que je peux danser ? Steuplaiiiiiit !" << std::endl;
+SuperTrap::~SuperTrap() {}
+
+unsigned int SuperTrap::meleeAttack(std::string const &target, std::string const &type)
+{
+	return (FragTrap::rangedAttack(target, type));
+}
+
+unsigned int SuperTrap::rangedAttack(std::string const &target, std::string const &type)
+{
+	return (NinjaTrap::meleeAttack(target, type));
 }

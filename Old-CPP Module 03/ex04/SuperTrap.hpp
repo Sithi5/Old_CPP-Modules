@@ -6,14 +6,14 @@
 # include "NinjaTrap.hpp"
 # include <iostream>
 
-class SuperTrap : public FragTrap, public NinjaTrap {
+class SuperTrap : public NinjaTrap, public FragTrap {
 public:
     SuperTrap(void);
     SuperTrap(std::string const &name);
-    virtual ~SuperTrap();
+    ~SuperTrap();
 
-    using FragTrap::meleeAttack;
-    using NinjaTrap::rangedAttack;
+    unsigned int rangedAttack(std::string const &target, std::string const &type);
+    unsigned int meleeAttack(std::string const &target, std::string const &type);
 };
 
 #endif

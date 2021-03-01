@@ -8,7 +8,7 @@ class FragTrap : public virtual ClapTrap{
 public:
     FragTrap(void);
     FragTrap(std::string const &name);
-    virtual ~FragTrap();
+    ~FragTrap();
 
     unsigned int meleeAttack(std::string const &target, std::string const &type) const;
     unsigned int rangedAttack(std::string const &target, std::string const &type) const;

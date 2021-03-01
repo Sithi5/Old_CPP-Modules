@@ -50,7 +50,7 @@ int main(void) {
         } else if (random_num == 6)
             maboubouce.ninjaShoeBox(mathieu, "SUPER-TP");
         else {
-            mathieu.takeDamage(maboubouce.vaulthunter_dot_exe("Maboubouce", "SUPER-TP"));
+            mathieu.takeDamage(maboubouce.vaulthunter_dot_exe("Mathieu", "SUPER-TP"));
             if (maboubouce.getHitPoints() <= 0) {
                 break;
             }

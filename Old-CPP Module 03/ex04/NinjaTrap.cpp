@@ -9,7 +9,6 @@ NinjaTrap::NinjaTrap(void)
     this->setArmorDamageReduction(0);
     this->setMeleeAttack(60);
     this->setRangedAttack(5);
-    std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
 }
 
 NinjaTrap::NinjaTrap(std::string const &name)
@@ -21,13 +20,10 @@ NinjaTrap::NinjaTrap(std::string const &name)
     this->setArmorDamageReduction(0);
     this->setMeleeAttack(60);
     this->setRangedAttack(5);
-    std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
 }
 
 
-NinjaTrap::~NinjaTrap() {
-    std::cout << this->getName() << " meurt et dit : " << "Est-ce que ça veut dire que je peux danser ? Steuplaiiiiiit !" << std::endl;
-}
+NinjaTrap::~NinjaTrap() {}
 
 unsigned int NinjaTrap::meleeAttack(const std::string &target, std::string const &type) const {
     if (this->getHitPoints() == 0){

@@ -7,7 +7,6 @@ FragTrap::FragTrap(void)
     this->setArmorDamageReduction(5);
     this->setMeleeAttack(30);
     this->setRangedAttack(20);
-    std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
 }
 
 FragTrap::FragTrap(std::string const &name)
@@ -17,13 +16,10 @@ FragTrap::FragTrap(std::string const &name)
     this->setArmorDamageReduction(5);
     this->setMeleeAttack(30);
     this->setRangedAttack(20);
-    std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
 }
 
 
-FragTrap::~FragTrap() {
-    std::cout << this->getName() << " meurt et dit : " << "Est-ce que ça veut dire que je peux danser ? Steuplaiiiiiit !" << std::endl;
-}
+FragTrap::~FragTrap() {}
 
 unsigned int FragTrap::meleeAttack(const std::string &target, std::string const &type) const {
     if (this->getHitPoints() == 0){
