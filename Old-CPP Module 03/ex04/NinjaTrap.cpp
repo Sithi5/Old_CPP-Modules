@@ -21,6 +21,7 @@ NinjaTrap::NinjaTrap(std::string const &name)
     this->setArmorDamageReduction(0);
     this->setMeleeAttack(60);
     this->setRangedAttack(5);
+    std::cout << this->getHitPoints();
     std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
 }
 
