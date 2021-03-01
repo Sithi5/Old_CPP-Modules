@@ -2,8 +2,8 @@
 
 NinjaTrap::NinjaTrap(void)
     : ClapTrap() {
-    this->setHitPoints(60);
     this->setMaxHitPoints(60);
+    this->setHitPoints(60);
     this->setMaxEnergyPoints(120);
     this->setEnergyPoints(120);
     this->setArmorDamageReduction(0);
@@ -13,8 +13,8 @@ NinjaTrap::NinjaTrap(void)
 
 NinjaTrap::NinjaTrap(std::string const &name)
     : ClapTrap(name) {
-    this->setHitPoints(60);
     this->setMaxHitPoints(60);
+    this->setHitPoints(60);
     this->setMaxEnergyPoints(120);
     this->setEnergyPoints(120);
     this->setArmorDamageReduction(0);
@@ -31,7 +31,7 @@ unsigned int NinjaTrap::meleeAttack(const std::string &target, std::string const
         return 0;
     }
     else{
-        std::cout << type << " <" << this->getName() << "> attaque <" << target << "> au corp a corp, causant <" << this->getMeleeAttack() << "> points de dégâts !" << std::endl;
+        std::cout << type << " <" << this->getName() << "> attaque <" << target << "> au corps a corps, causant <" << this->getMeleeAttack() << "> points de dégâts !" << std::endl;
         return this->getMeleeAttack();
     }
 }

@@ -2,8 +2,8 @@
 
 SuperTrap::SuperTrap(void)
     : ClapTrap() {
-    this->setHitPoints(100);
     this->setMaxHitPoints(100);
+    this->setHitPoints(100);
     this->setMaxEnergyPoints(120);
     this->setEnergyPoints(120);
     this->setArmorDamageReduction(5);
@@ -13,8 +13,8 @@ SuperTrap::SuperTrap(void)
 
 SuperTrap::SuperTrap(std::string const &name) 
     : ClapTrap(name) {
-    this->setHitPoints(100);
     this->setMaxHitPoints(100);
+    this->setHitPoints(100);
     this->setMaxEnergyPoints(120);
     this->setEnergyPoints(120);
     this->setArmorDamageReduction(5);
@@ -26,10 +26,10 @@ SuperTrap::~SuperTrap() {}
 
 unsigned int SuperTrap::meleeAttack(std::string const &target, std::string const &type)
 {
-	return (FragTrap::rangedAttack(target, type));
+    return (NinjaTrap::meleeAttack(target, type));
 }
 
 unsigned int SuperTrap::rangedAttack(std::string const &target, std::string const &type)
 {
-	return (NinjaTrap::meleeAttack(target, type));
+    return (FragTrap::rangedAttack(target, type));
 }
