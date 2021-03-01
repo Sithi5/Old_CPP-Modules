@@ -28,4 +28,4 @@ private:
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
 
-#endif //OLD_CPP_MODULE_FIXED_HPP
+#endif
