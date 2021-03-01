@@ -48,10 +48,10 @@ This first module of C++ is designed to help you understand the specifities of t
 | Exercise | Name | Finished |
 |:--------:|:----------------:|:----------------:|
 | 00       | Aaaaand... OPEN! |:heavy_check_mark:|
-| 01       | Serena, my love! |                  |
-| 02       | Repetitive work  |                  |
-| 03       | Now it’s easier! |                  |
-| 04       | Ultimate assault |                  |
+| 01       | Serena, my love! |:heavy_check_mark:|
+| 02       | Repetitive work  |:heavy_check_mark:|
+| 03       | Now it’s easier! |:heavy_check_mark:|
+| 04       | Ultimate assault |:heavy_check_mark:|
 
 ## Module 04
 

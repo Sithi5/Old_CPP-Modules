@@ -9,6 +9,8 @@ SuperTrap::SuperTrap(void)
     this->setArmorDamageReduction(5);
     this->setMeleeAttack(60);
     this->setRangedAttack(20);
+    std::cout << "SuperTrap constructor called." << std::endl;
+
 }
 
 SuperTrap::SuperTrap(std::string const &name) 
@@ -20,9 +22,12 @@ SuperTrap::SuperTrap(std::string const &name)
     this->setArmorDamageReduction(5);
     this->setMeleeAttack(60);
     this->setRangedAttack(20);
+    std::cout << "SuperTrap constructor called." << std::endl;
 }
 
-SuperTrap::~SuperTrap() {}
+SuperTrap::~SuperTrap() {
+    std::cout << "SuperTrap destructor called." << std::endl;
+}
 
 unsigned int SuperTrap::meleeAttack(std::string const &target, std::string const &type)
 {
