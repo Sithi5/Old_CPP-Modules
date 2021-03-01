@@ -5,8 +5,8 @@ int main(void) {
     srand (time(NULL));
     int random_num;
 
-    FragTrap mathieu = FragTrap("Mathieu");
-    FragTrap jududu = FragTrap("Jududu");
+    NinjaTrap mathieu = NinjaTrap("Mathieu");
+    NinjaTrap jududu = NinjaTrap("Jududu");
 
     std::cout << "Bienvenue dans l'arene peuple de la cité impérial ! Pour ce match, nous avons de la chair fraiche, deux nouveaux chiens ! Alors ne perdons pas de temps ! Que la bataille... commence !" << std::endl;
     std::cout << std::endl;

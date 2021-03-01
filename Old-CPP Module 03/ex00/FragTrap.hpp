@@ -5,14 +5,14 @@
 #include <time.h>
 #include <stdlib.h>
 
-class FragTrap{
+class NinjaTrap{
 public:
-    FragTrap(void);
-    FragTrap(std::string const &name);
-    FragTrap(FragTrap const &src);
-    ~FragTrap();
+    NinjaTrap(void);
+    NinjaTrap(std::string const &name);
+    NinjaTrap(NinjaTrap const &src);
+    ~NinjaTrap();
 
-    FragTrap & operator=(FragTrap const &rhs);
+    NinjaTrap & operator=(NinjaTrap const &rhs);
 
     unsigned int getHitPoints() const;
 
