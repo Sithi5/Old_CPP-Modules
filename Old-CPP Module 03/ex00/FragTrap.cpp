@@ -1,29 +1,29 @@
 #include "FragTrap.hpp"
 
-NinjaTrap::NinjaTrap(void)
+FragTrap::FragTrap(void)
     : _hit_points((unsigned int)100), _max_hit_points((unsigned int)100),_energy_points((unsigned int)100), _max_energy_points((unsigned int)100),
     _level((unsigned int)1), _name("default"),_melee_attack((unsigned int)30), _ranged_attack((unsigned int)20),_armor_damage_reduction((unsigned int)5) {
     srand (time(NULL));
     std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
 }
 
-NinjaTrap::NinjaTrap(std::string const &name)
+FragTrap::FragTrap(std::string const &name)
     : _hit_points((unsigned int)100), _max_hit_points((unsigned int)100),_energy_points((unsigned int)100), _max_energy_points((unsigned int)100),
     _level((unsigned int)1), _name(name),_melee_attack((unsigned int)30), _ranged_attack((unsigned int)20),_armor_damage_reduction((unsigned int)5) {
     srand (time(NULL));
     std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
 }
 
-NinjaTrap::NinjaTrap (NinjaTrap const &src) {
+FragTrap::FragTrap (FragTrap const &src) {
     *this = src;
     return ;
 }
 
-NinjaTrap::~NinjaTrap() {
+FragTrap::~FragTrap() {
     std::cout << this->getName() << " meurt et dit : " << "Est-ce que ça veut dire que je peux danser ? Steuplaiiiiiit !" << std::endl;
 }
 
-NinjaTrap    &NinjaTrap::operator=(NinjaTrap const & rhs) {
+FragTrap    &FragTrap::operator=(FragTrap const & rhs) {
     if (this != &rhs) {
         this->_name = rhs.getName();
         this->_hit_points = rhs.getHitPoints();
@@ -38,11 +38,11 @@ NinjaTrap    &NinjaTrap::operator=(NinjaTrap const & rhs) {
     return *this;
 }
 
-unsigned int NinjaTrap::getHitPoints() const {
+unsigned int FragTrap::getHitPoints() const {
     return this->_hit_points;
 }
 
-void NinjaTrap::setHitPoints(unsigned int hitPoints) {
+void FragTrap::setHitPoints(unsigned int hitPoints) {
     if (hitPoints > this->getMaxHitPoints()){
         this->_hit_points = this->getMaxHitPoints();
     }
@@ -54,27 +54,27 @@ void NinjaTrap::setHitPoints(unsigned int hitPoints) {
     }
 }
 
-unsigned int NinjaTrap::getMaxHitPoints() const {
+unsigned int FragTrap::getMaxHitPoints() const {
     return this->_max_hit_points;
 }
 
-void NinjaTrap::setMaxHitPoints(unsigned int maxHitPoints) {
+void FragTrap::setMaxHitPoints(unsigned int maxHitPoints) {
     this->_max_hit_points = maxHitPoints;
 }
 
-unsigned int NinjaTrap::getMaxEnergyPoints() const {
+unsigned int FragTrap::getMaxEnergyPoints() const {
     return this->_max_energy_points;
 }
 
-void NinjaTrap::setMaxEnergyPoints(unsigned int maxEnergyPoints) {
+void FragTrap::setMaxEnergyPoints(unsigned int maxEnergyPoints) {
     this->_max_energy_points = maxEnergyPoints;
 }
 
-unsigned int NinjaTrap::getEnergyPoints() const {
+unsigned int FragTrap::getEnergyPoints() const {
     return this->_energy_points;
 }
 
-void NinjaTrap::setEnergyPoints(unsigned int energyPoints) {
+void FragTrap::setEnergyPoints(unsigned int energyPoints) {
     if (energyPoints > this->getMaxEnergyPoints()){
         this->_energy_points = this->getMaxEnergyPoints();
     }
@@ -83,47 +83,47 @@ void NinjaTrap::setEnergyPoints(unsigned int energyPoints) {
     }
 }
 
-unsigned int NinjaTrap::getLevel() const {
+unsigned int FragTrap::getLevel() const {
     return this->_level;
 }
 
-void NinjaTrap::setLevel(unsigned int level) {
+void FragTrap::setLevel(unsigned int level) {
     this->_level = level;
 }
 
-const std::string &NinjaTrap::getName() const {
+const std::string &FragTrap::getName() const {
     return this->_name;
 }
 
-void NinjaTrap::setName(const std::string &name) {
+void FragTrap::setName(const std::string &name) {
     this->_name = name;
 }
 
-unsigned int NinjaTrap::getMeleeAttack() const {
+unsigned int FragTrap::getMeleeAttack() const {
     return this->_melee_attack;
 }
 
-void NinjaTrap::setMeleeAttack(unsigned int meleeAttack) {
+void FragTrap::setMeleeAttack(unsigned int meleeAttack) {
     this->_melee_attack = meleeAttack;
 }
 
-unsigned int NinjaTrap::getRangedAttack() const {
+unsigned int FragTrap::getRangedAttack() const {
     return this->_ranged_attack;
 }
 
-void NinjaTrap::setRangedAttack(unsigned int rangedAttack) {
+void FragTrap::setRangedAttack(unsigned int rangedAttack) {
     this->_ranged_attack = rangedAttack;
 }
 
-unsigned int NinjaTrap::getArmorDamageReduction() const {
+unsigned int FragTrap::getArmorDamageReduction() const {
     return this->_armor_damage_reduction;
 }
 
-void NinjaTrap::setArmorDamageReduction(unsigned int armorDamageReduction) {
+void FragTrap::setArmorDamageReduction(unsigned int armorDamageReduction) {
     this->_armor_damage_reduction = armorDamageReduction;
 }
 
-unsigned int NinjaTrap::meleeAttack(const std::string &target) const {
+unsigned int FragTrap::meleeAttack(const std::string &target) const {
     if (this->getHitPoints() == 0){
         std::cout << "FR4G-TP <" << this->_name << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->_name << ">..." << std::endl;
         return 0;
@@ -134,7 +134,7 @@ unsigned int NinjaTrap::meleeAttack(const std::string &target) const {
     }
 }
 
-unsigned int NinjaTrap::echappementCryogénique(const std::string &target) const {
+unsigned int FragTrap::echappementCryogénique(const std::string &target) const {
     if (this->getHitPoints() == 0){
         std::cout << "FR4G-TP <" << this->_name << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->_name << ">..." << std::endl;
         return 0;
@@ -145,7 +145,7 @@ unsigned int NinjaTrap::echappementCryogénique(const std::string &target) const
     }
 }
 
-unsigned int NinjaTrap::rireDiabolique(const std::string &target) const {
+unsigned int FragTrap::rireDiabolique(const std::string &target) const {
     if (this->getHitPoints() == 0){
         std::cout << "FR4G-TP <" << this->_name << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->_name << ">..." << std::endl;
         return 0;
@@ -156,7 +156,7 @@ unsigned int NinjaTrap::rireDiabolique(const std::string &target) const {
     }
 }
 
-unsigned int NinjaTrap::grenadeDeLaColere(const std::string &target) const {
+unsigned int FragTrap::grenadeDeLaColere(const std::string &target) const {
     if (this->getHitPoints() == 0){
         std::cout << "FR4G-TP <" << this->_name << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->_name << ">..." << std::endl;
         return 0;
@@ -167,7 +167,7 @@ unsigned int NinjaTrap::grenadeDeLaColere(const std::string &target) const {
     }
 }
 
-unsigned int NinjaTrap::machineDeMort(const std::string &target) const {
+unsigned int FragTrap::machineDeMort(const std::string &target) const {
     if (this->getHitPoints() == 0){
         std::cout << "FR4G-TP <" << this->_name << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->_name << ">..." << std::endl;
         return 0;
@@ -178,7 +178,7 @@ unsigned int NinjaTrap::machineDeMort(const std::string &target) const {
     }
 }
 
-unsigned int NinjaTrap::punchDHyperion(const std::string &target) const {
+unsigned int FragTrap::punchDHyperion(const std::string &target) const {
     if (this->getHitPoints() == 0){
         std::cout << "FR4G-TP <" << this->_name << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->_name << ">..." << std::endl;
         return 0;
@@ -189,7 +189,7 @@ unsigned int NinjaTrap::punchDHyperion(const std::string &target) const {
     }
 }
 
-unsigned int NinjaTrap::rangedAttack(const std::string &target) const {
+unsigned int FragTrap::rangedAttack(const std::string &target) const {
     if (this->getHitPoints() == 0){
         std::cout << "FR4G-TP <" << this->_name << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->_name << ">..." << std::endl;
         return 0;
@@ -201,7 +201,7 @@ unsigned int NinjaTrap::rangedAttack(const std::string &target) const {
     }
 }
 
-void NinjaTrap::takeDamage(unsigned int amount) {
+void FragTrap::takeDamage(unsigned int amount) {
     if (amount < this->getArmorDamageReduction()){
         std::cout << "FR4G-TP <" << this->_name << "> se fait frapper mais ce n'est pas très efficace..." << std::endl;
     }
@@ -217,29 +217,29 @@ void NinjaTrap::takeDamage(unsigned int amount) {
 
 }
 
-void NinjaTrap::beRepaired(unsigned int amount) {
+void FragTrap::beRepaired(unsigned int amount) {
     this->setHitPoints(this->getHitPoints() + amount);
     std::cout << "FR4G-TP <" << this->_name << "> se répare! Il a maintenant : <" <<this->getHitPoints() << "> points de vie !" << std::endl;
 }
 
-void NinjaTrap::chargingBattery(unsigned int amount) {
+void FragTrap::chargingBattery(unsigned int amount) {
     this->setEnergyPoints(this->getEnergyPoints() + amount);
     std::cout << "FR4G-TP <" << this->_name << "> se recharge! Il a maintenant : <" <<this->getEnergyPoints() << "> points d'energie !" << std::endl;
 }
 
-unsigned int NinjaTrap::vaulthunter_dot_exe(const std::string &target) {
+unsigned int FragTrap::vaulthunter_dot_exe(const std::string &target) {
     if (this->getEnergyPoints() < 25){
         std::cout << "FR4G-TP <" << this->_name << "> n'a plus d'energie..." << std::endl;
         return 0;
     }
     else{
         this->setEnergyPoints(this->getEnergyPoints() - 25);
-        unsigned int (NinjaTrap::*p[5])(const std::string &target) const = {
-                &NinjaTrap::machineDeMort,
-                &NinjaTrap::rireDiabolique,
-                &NinjaTrap::echappementCryogénique,
-                &NinjaTrap::punchDHyperion,
-                &NinjaTrap::grenadeDeLaColere,
+        unsigned int (FragTrap::*p[5])(const std::string &target) const = {
+                &FragTrap::machineDeMort,
+                &FragTrap::rireDiabolique,
+                &FragTrap::echappementCryogénique,
+                &FragTrap::punchDHyperion,
+                &FragTrap::grenadeDeLaColere,
         };
         std::string key[5] = {
                 "machineDeMort",
