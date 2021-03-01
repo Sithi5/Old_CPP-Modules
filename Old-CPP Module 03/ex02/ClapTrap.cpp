@@ -1,17 +1,17 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void)
-    : _hit_points((unsigned int)100), _max_hit_points((unsigned int)100),_energy_points((unsigned int)50), _max_energy_points((unsigned int)50),
-    _level((unsigned int)1), _name("default"), _melee_attack((unsigned int)30), _ranged_attack((unsigned int)15), _armor_damage_reduction((unsigned int)3) {
+    : _hit_points((unsigned int)100), _max_hit_points((unsigned int)100),_energy_points((unsigned int)0), _max_energy_points((unsigned int)0),
+      _level((unsigned int)1), _name("default"),_melee_attack((unsigned int)0), _ranged_attack((unsigned int)0), _armor_damage_reduction((unsigned int)0){
     srand (time(NULL));
-    std::cout << this->getName() << " se réveille dans la décharge et dit : Le meilleur sbire du monde !" << std::endl;
+    std::cout << "Void Parent constructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string const &name)
-    : _hit_points((unsigned int)100), _max_hit_points((unsigned int)100),_energy_points((unsigned int)50), _max_energy_points((unsigned int)50),
-    _level((unsigned int)1), _name(name),_melee_attack((unsigned int)30), _ranged_attack((unsigned int)20), _armor_damage_reduction((unsigned int)5) {
+    : _hit_points((unsigned int)100), _max_hit_points((unsigned int)100),_energy_points((unsigned int)0), _max_energy_points((unsigned int)0),
+    _level((unsigned int)1), _name(name),_melee_attack((unsigned int)0), _ranged_attack((unsigned int)0), _armor_damage_reduction((unsigned int)0) {
     srand (time(NULL));
-    std::cout << this->getName() << " se réveille dans la décharge et dit : Le meilleur sbire du monde !" << std::endl;
+    std::cout << "Parent constructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap (ClapTrap const &src) {
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap (ClapTrap const &src) {
 }
 
 ClapTrap::~ClapTrap() {
-    std::cout << this->getName() << " meurt et dit : On est bien seul par ici..." << std::endl;
+    std::cout << "Parent destructor called." << std::endl;
 }
 
 ClapTrap    &ClapTrap::operator=(ClapTrap const & rhs) {
@@ -50,7 +50,7 @@ void ClapTrap::setHitPoints(unsigned int hitPoints) {
         this->_hit_points = hitPoints;
     }
     if (this->_hit_points == (unsigned int)0){
-        std::cout << "CL4P-TP <" << this->_name << "> est hors-service..." << std::endl;
+        std::cout << "CL4P-TP <" << this->getName() << "> est hors-service..." << std::endl;
     }
 }
 
@@ -125,22 +125,22 @@ void ClapTrap::setArmorDamageReduction(unsigned int armorDamageReduction) {
 
 unsigned int ClapTrap::meleeAttack(const std::string &target) const {
     if (this->getHitPoints() == 0){
-        std::cout << "CL4P-TP <" << this->_name << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->_name << ">..." << std::endl;
+        std::cout << "CL4P-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
         return 0;
     }
     else{
-        std::cout << "CL4P-TP <" << this->_name << "> attaque <" << target << "> au corp a corp, causant <" << this->getMeleeAttack() << "> points de dégâts !" << std::endl;
+        std::cout << "CL4P-TP <" << this->getName() << "> attaque <" << target << "> au corp a corp, causant <" << this->getMeleeAttack() << "> points de dégâts !" << std::endl;
         return this->getMeleeAttack();
     }
 }
 
 unsigned int ClapTrap::rangedAttack(const std::string &target) const {
     if (this->getHitPoints() == 0){
-        std::cout << "CL4P-TP <" << this->_name << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->_name << ">..." << std::endl;
+        std::cout << "CL4P-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
         return 0;
     }
     else {
-        std::cout << "CL4P-TP <" << this->_name << "> attaque <" << target << "> à distance, causant <"
+        std::cout << "CL4P-TP <" << this->getName() << "> attaque <" << target << "> à distance, causant <"
                   << this->getRangedAttack() << "> points de dégâts !" << std::endl;
         return this->getRangedAttack();
     }
@@ -148,10 +148,10 @@ unsigned int ClapTrap::rangedAttack(const std::string &target) const {
 
 void ClapTrap::takeDamage(unsigned int amount) {
     if (amount < this->getArmorDamageReduction()){
-        std::cout << "CL4P-TP <" << this->_name << "> se fait frapper mais ce n'est pas très efficace..." << std::endl;
+        std::cout << "CL4P-TP <" << this->getName() << "> se fait frapper mais ce n'est pas très efficace..." << std::endl;
     }
     else{
-        std::cout << "CL4P-TP <" << this->_name << "> se fait frapper et reçoit <" << amount << "> point de dégats. Après réduction de l'armure, il pert : <" <<amount - this->getArmorDamageReduction() << "> points de vie !" << std::endl;
+        std::cout << "CL4P-TP <" << this->getName() << "> se fait frapper et reçoit <" << amount << "> point de dégats. Après réduction de l'armure, il pert : <" <<amount - this->getArmorDamageReduction() << "> points de vie !" << std::endl;
         if (this->getHitPoints() > (amount - this->getArmorDamageReduction())){
             this->setHitPoints(this->getHitPoints() - (amount - this->getArmorDamageReduction()));
         }
@@ -164,11 +164,11 @@ void ClapTrap::takeDamage(unsigned int amount) {
 
 void ClapTrap::beRepaired(unsigned int amount) {
     this->setHitPoints(this->getHitPoints() + amount);
-    std::cout << "CL4P-TP <" << this->_name << "> se répare! Il a maintenant : <" <<this->getHitPoints() << "> points de vie !" << std::endl;
+    std::cout << "CL4P-TP <" << this->getName() << "> se répare! Il a maintenant : <" <<this->getHitPoints() << "> points de vie !" << std::endl;
 }
 
 void ClapTrap::chargingBattery(unsigned int amount) {
     this->setEnergyPoints(this->getEnergyPoints() + amount);
-    std::cout << "CL4P-TP <" << this->_name << "> se recharge! Il a maintenant : <" <<this->getEnergyPoints() << "> points d'energie !" << std::endl;
+    std::cout << "CL4P-TP <" << this->getName() << "> se recharge! Il a maintenant : <" <<this->getEnergyPoints() << "> points d'energie !" << std::endl;
 }
 

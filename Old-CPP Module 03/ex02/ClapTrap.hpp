@@ -2,52 +2,38 @@
 # define CLAPTRAP_HPP
 
 # include <iostream>
-# include <string>
+# include <stdlib.h>
+# include <time.h>
 
 class ClapTrap {
 public:
-    ClapTrap(void);
-    ClapTrap(std::string const &name);
+    explicit ClapTrap(void);
+    explicit ClapTrap(std::string const &name);
     ClapTrap(ClapTrap const &src);
-    virtual ~ClapTrap();
+    ~ClapTrap();
 
     ClapTrap & operator=(ClapTrap const &rhs);
 
-     unsigned int getHitPoints() const;
 
     void setHitPoints(unsigned int hitPoints);
+    void setMaxHitPoints(unsigned int maxHitPoints);
+    void setMaxEnergyPoints(unsigned int maxEnergyPoints);
+    void setEnergyPoints(unsigned int energyPoints);
+    void setLevel(unsigned int level);
+    void setName(const std::string &name);
+    void setMeleeAttack(unsigned int meleeAttack);
+    void setRangedAttack(unsigned int rangedAttack);
+    void setArmorDamageReduction(unsigned int armorDamageReduction);
 
     unsigned int getMaxHitPoints() const;
-
-    void setMaxHitPoints(unsigned int maxHitPoints);
-
+    unsigned int getHitPoints() const;
     unsigned int getMaxEnergyPoints() const;
-
-    void setMaxEnergyPoints(unsigned int maxEnergyPoints);
-
     unsigned int getEnergyPoints() const;
-
-    void setEnergyPoints(unsigned int energyPoints);
-
     unsigned int getLevel() const;
-
-    void setLevel(unsigned int level);
-
     const std::string &getName() const;
-
-    void setName(const std::string &name);
-
     unsigned int getMeleeAttack() const;
-
-    void setMeleeAttack(unsigned int meleeAttack);
-
     unsigned int getRangedAttack() const;
-
-    void setRangedAttack(unsigned int rangedAttack);
-
     unsigned int getArmorDamageReduction() const;
-
-    void setArmorDamageReduction(unsigned int armorDamageReduction);
 
     unsigned int meleeAttack(std::string const &target) const;
     unsigned int rangedAttack(std::string const &target) const;

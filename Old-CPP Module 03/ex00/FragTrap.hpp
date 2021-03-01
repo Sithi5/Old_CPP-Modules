@@ -10,7 +10,7 @@ public:
     FragTrap(void);
     FragTrap(std::string const &name);
     FragTrap(FragTrap const &src);
-    virtual ~FragTrap();
+    ~FragTrap();
 
     FragTrap & operator=(FragTrap const &rhs);
 

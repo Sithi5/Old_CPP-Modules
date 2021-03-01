@@ -10,7 +10,7 @@ public:
     Fixed(const int value);
     Fixed(const float value);
     Fixed(Fixed const &copy);
-    virtual ~Fixed(void);
+    ~Fixed(void);
 
     Fixed & operator=(Fixed const & rhs);
 

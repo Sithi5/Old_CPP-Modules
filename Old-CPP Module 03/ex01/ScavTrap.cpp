@@ -179,6 +179,6 @@ void ScavTrap::chargingBattery(unsigned int amount) {
 }
 
 void ScavTrap::challengeNewcomer(void) {
-    std::cout << "SC4V-TP <" << this->_name << "> va effectuer le fameux " << ScavTrap::_challenges[rand() % 3] << std::endl;
+    std::cout << "SC4V-TP <" << this->_name << "> va effectuer le fameux " << ScavTrap::_challenges[rand() % 3]  << "." << std::endl;
 }
 
