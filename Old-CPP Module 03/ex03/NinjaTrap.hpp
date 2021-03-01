@@ -4,7 +4,7 @@
 # include "ClapTrap.hpp"
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
-#include <iostream>
+# include <iostream>
 
 class NinjaTrap : public ClapTrap{
 public:
