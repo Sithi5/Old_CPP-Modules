@@ -6,7 +6,7 @@
 class Fixed {
 public:
     Fixed(void);
-    virtual ~Fixed(void);
+    ~Fixed(void);
 
     Fixed(Fixed const &copy);
     Fixed & operator=(Fixed const & rhs);
