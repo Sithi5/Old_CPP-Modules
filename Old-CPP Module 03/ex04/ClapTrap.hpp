@@ -10,7 +10,7 @@ public:
     ClapTrap(void);
     ClapTrap(std::string const &name);
     ClapTrap(ClapTrap const &src);
-    ~ClapTrap();
+    virtual ~ClapTrap();
 
     ClapTrap & operator=(ClapTrap const &rhs);
 

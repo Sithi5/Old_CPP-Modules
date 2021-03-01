@@ -6,19 +6,19 @@
 # include "FragTrap.hpp"
 # include <iostream>
 
-class NinjaTrap : public ClapTrap{
+class NinjaTrap : public virtual ClapTrap{
 public:
     NinjaTrap(void);
     NinjaTrap(std::string const &name);
-    ~NinjaTrap();
+    virtual ~NinjaTrap();
 
-    unsigned int meleeAttack(std::string const &target) const;
-    unsigned int rangedAttack(std::string const &target) const;
+    unsigned int meleeAttack(std::string const &target, std::string const &type) const;
+    unsigned int rangedAttack(std::string const &target, std::string const &type) const;
 
-    void ninjaShoeBox(FragTrap &claptrap);
-    void ninjaShoeBox(ScavTrap &claptrap);
-    void ninjaShoeBox(ClapTrap &claptrap);
-    void ninjaShoeBox(NinjaTrap &claptrap);
+    void ninjaShoeBox(FragTrap &claptrap, std::string const &type);
+    void ninjaShoeBox(ScavTrap &claptrap, std::string const &type);
+    void ninjaShoeBox(ClapTrap &claptrap, std::string const &type);
+    void ninjaShoeBox(NinjaTrap &claptrap, std::string const &type);
 
 };
 

@@ -1,14 +1,13 @@
 #include <iostream>
 #include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-#include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int main(void) {
     srand(time(NULL));
     int random_num;
 
     FragTrap mathieu = FragTrap("Mathieu");
-    NinjaTrap maboubouce = NinjaTrap("Maboubouce");
+    SuperTrap maboubouce = SuperTrap("Maboubouce");
 
     std::cout
             << "Bienvenue dans l'arene peuple de la cité impérial ! Pour ce match, nous avons de la chair fraiche, deux nouveaux chiens ! Alors ne perdons pas de temps ! Que la bataille... commence !"
@@ -24,7 +23,7 @@ int main(void) {
 
         random_num = rand() % 6;
         if (random_num < 4) {
-            maboubouce.takeDamage(mathieu.vaulthunter_dot_exe("Maboubouce"));
+            maboubouce.takeDamage(mathieu.vaulthunter_dot_exe("Maboubouce", "FR4G-TP"));
             if (maboubouce.getHitPoints() <= 0) {
                 break;
             }
@@ -34,13 +33,13 @@ int main(void) {
             mathieu.chargingBattery((unsigned int) rand() % 40 + 15);
         }
 
-        random_num = rand() % 7;
+        random_num = rand() % 8;
 
         if (random_num < 4) {
             if (random_num % 2 == 0)
-                mathieu.takeDamage(maboubouce.rangedAttack("Mathieu"));
+                mathieu.takeDamage(maboubouce.rangedAttack("Mathieu", "SUPER-TP"));
             else
-                mathieu.takeDamage(maboubouce.meleeAttack("Mathieu"));
+                mathieu.takeDamage(maboubouce.meleeAttack("Mathieu", "SUPER-TP"));
             if (mathieu.getHitPoints() <= 0) {
                 break;
             }
@@ -48,8 +47,14 @@ int main(void) {
             maboubouce.beRepaired((unsigned int) rand() % 40 + 15);
         } else if (random_num == 5) {
             maboubouce.chargingBattery((unsigned int) rand() % 40 + 15);
-        } else
-            maboubouce.ninjaShoeBox(mathieu);
+        } else if (random_num == 6)
+            maboubouce.ninjaShoeBox(mathieu, "SUPER-TP");
+        else {
+            mathieu.takeDamage(maboubouce.vaulthunter_dot_exe("Maboubouce", "SUPER-TP"));
+            if (maboubouce.getHitPoints() <= 0) {
+                break;
+            }
+        }
 
         std::cout << std::endl;
     }

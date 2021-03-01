@@ -10,10 +10,10 @@ class SuperTrap : public FragTrap, public NinjaTrap {
 public:
     SuperTrap(void);
     SuperTrap(std::string const &name);
-    ~SuperTrap();
+    virtual ~SuperTrap();
 
-    unsigned int meleeAttack(std::string const &target) const;
-    unsigned int rangedAttack(std::string const &target) const;
+    using FragTrap::meleeAttack;
+    using NinjaTrap::rangedAttack;
 };
 
 #endif

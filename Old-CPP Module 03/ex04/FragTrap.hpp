@@ -4,21 +4,21 @@
 # include "ClapTrap.hpp"
 # include <iostream>
 
-class FragTrap : public ClapTrap{
+class FragTrap : public virtual ClapTrap{
 public:
     FragTrap(void);
     FragTrap(std::string const &name);
-    ~FragTrap();
+    virtual ~FragTrap();
 
-    unsigned int meleeAttack(std::string const &target) const;
-    unsigned int rangedAttack(std::string const &target) const;
+    unsigned int meleeAttack(std::string const &target, std::string const &type) const;
+    unsigned int rangedAttack(std::string const &target, std::string const &type) const;
 
-    unsigned int echappementCryogénique(std::string const &target) const;
-    unsigned int machineDeMort(std::string const &target) const;
-    unsigned int rireDiabolique(std::string const &target) const;
-    unsigned int punchDHyperion(std::string const &target) const;
-    unsigned int grenadeDeLaColere(std::string const &target) const;
-    unsigned int vaulthunter_dot_exe(std::string const & target);
+    unsigned int echappementCryogénique(std::string const &target, std::string const &type) const;
+    unsigned int machineDeMort(std::string const &target, std::string const &type) const;
+    unsigned int rireDiabolique(std::string const &target, std::string const &type) const;
+    unsigned int punchDHyperion(std::string const &target, std::string const &type) const;
+    unsigned int grenadeDeLaColere(std::string const &target, std::string const &type) const;
+    unsigned int vaulthunter_dot_exe(std::string const & target, std::string const &type);
 
 };
 
