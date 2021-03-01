@@ -1,7 +1,7 @@
 #include "SuperTrap.hpp"
 
 SuperTrap::SuperTrap(void)
-    : ClapTrap() {
+    : ClapTrap(), NinjaTrap(), FragTrap() {
     this->setMaxHitPoints(100);
     this->setHitPoints(100);
     this->setMaxEnergyPoints(120);
@@ -12,7 +12,7 @@ SuperTrap::SuperTrap(void)
 }
 
 SuperTrap::SuperTrap(std::string const &name) 
-    : ClapTrap(name) {
+    : ClapTrap(name), NinjaTrap(), FragTrap()  {
     this->setMaxHitPoints(100);
     this->setHitPoints(100);
     this->setMaxEnergyPoints(120);
