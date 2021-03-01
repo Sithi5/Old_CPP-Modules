@@ -26,64 +26,65 @@ FragTrap::~FragTrap() {
 }
 
 
+
 unsigned int FragTrap::echappementCryogénique(const std::string &target) const {
     if (this->getHitPoints() == 0){
-        std::cout << "CL4P-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
+        std::cout << "FR4G-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
         return 0;
     }
     else{
-        std::cout << "CL4P-TP <" << this->getName() << "> attaque <" << target << "> avec Échappement cryogénique, causant <" << this->getMeleeAttack() * 1 << "> points de dégâts !" << std::endl;
+        std::cout << "FR4G-TP <" << this->getName() << "> attaque <" << target << "> avec Échappement cryogénique, causant <" << this->getMeleeAttack() * 1 << "> points de dégâts !" << std::endl;
         return this->getMeleeAttack() * 1;
     }
 }
 
 unsigned int FragTrap::rireDiabolique(const std::string &target) const {
     if (this->getHitPoints() == 0){
-        std::cout << "CL4P-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
+        std::cout << "FR4G-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
         return 0;
     }
     else{
-        std::cout << "CL4P-TP <" << this->getName() << "> attaque <" << target << "> avec Rire diabolique (Mouhahahahaha), causant <" << this->getMeleeAttack() * 0 << "> points de dégâts !" << std::endl;
+        std::cout << "FR4G-TP <" << this->getName() << "> attaque <" << target << "> avec Rire diabolique (Mouhahahahaha), causant <" << this->getMeleeAttack() * 0 << "> points de dégâts !" << std::endl;
         return this->getMeleeAttack() * 0;
     }
 }
 
 unsigned int FragTrap::grenadeDeLaColere(const std::string &target) const {
     if (this->getHitPoints() == 0){
-        std::cout << "CL4P-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
+        std::cout << "FR4G-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
         return 0;
     }
     else{
-        std::cout << "CL4P-TP <" << this->getName() << "> attaque <" << target << "> avec Grenade de la colère, causant <" << this->getRangedAttack() * 1 << "> points de dégâts !" << std::endl;
+        std::cout << "FR4G-TP <" << this->getName() << "> attaque <" << target << "> avec Grenade de la colère, causant <" << this->getRangedAttack() * 1 << "> points de dégâts !" << std::endl;
         return this->getRangedAttack() * 1;
     }
 }
 
 unsigned int FragTrap::machineDeMort(const std::string &target) const {
     if (this->getHitPoints() == 0){
-        std::cout << "CL4P-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
+        std::cout << "FR4G-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
         return 0;
     }
     else{
-        std::cout << "CL4P-TP <" << this->getName() << "> attaque <" << target << "> avec Machine de mort, causant <" << this->getMeleeAttack() * 2 << "> points de dégâts !" << std::endl;
+        std::cout << "FR4G-TP <" << this->getName() << "> attaque <" << target << "> avec Machine de mort, causant <" << this->getMeleeAttack() * 2 << "> points de dégâts !" << std::endl;
         return this->getMeleeAttack() * 2;
     }
 }
 
 unsigned int FragTrap::punchDHyperion(const std::string &target) const {
     if (this->getHitPoints() == 0){
-        std::cout << "CL4P-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
+        std::cout << "FR4G-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
         return 0;
     }
     else{
-        std::cout << "CL4P-TP <" << this->getName() << "> attaque <" << target << "> avec Punch d'Hyperion, causant <" << this->getRangedAttack() * 0.5 << "> points de dégâts !" << std::endl;
+        std::cout << "FR4G-TP <" << this->getName() << "> attaque <" << target << "> avec Punch d'Hyperion, causant <" << this->getRangedAttack() * 0.5 << "> points de dégâts !" << std::endl;
         return this->getRangedAttack() * 0.5;
     }
 }
 
 unsigned int FragTrap::vaulthunter_dot_exe(const std::string &target) {
     if (this->getEnergyPoints() < 25){
-        std::cout << "CL4P-TP <" << this->getName() << "> n'a plus d'energie..." << std::endl;
+        std::cout << "FR4G-TP <" << this->getName() << "> n'a plus d'energie..." << std::endl;
         return 0;
     }
     else{

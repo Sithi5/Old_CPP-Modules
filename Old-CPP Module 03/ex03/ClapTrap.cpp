@@ -50,7 +50,7 @@ void ClapTrap::setHitPoints(unsigned int hitPoints) {
         this->_hit_points = hitPoints;
     }
     if (this->_hit_points == (unsigned int)0){
-        std::cout << "CL4P-TP <" << this->getName() << "> est hors-service..." << std::endl;
+        std::cout << "<" << this->getName() << "> est hors-service..." << std::endl;
     }
 }
 
@@ -123,35 +123,14 @@ void ClapTrap::setArmorDamageReduction(unsigned int armorDamageReduction) {
     this->_armor_damage_reduction = armorDamageReduction;
 }
 
-unsigned int ClapTrap::meleeAttack(const std::string &target) const {
-    if (this->getHitPoints() == 0){
-        std::cout << "CL4P-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
-        return 0;
-    }
-    else{
-        std::cout << "CL4P-TP <" << this->getName() << "> attaque <" << target << "> au corp a corp, causant <" << this->getMeleeAttack() << "> points de dégâts !" << std::endl;
-        return this->getMeleeAttack();
-    }
-}
 
-unsigned int ClapTrap::rangedAttack(const std::string &target) const {
-    if (this->getHitPoints() == 0){
-        std::cout << "CL4P-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
-        return 0;
-    }
-    else {
-        std::cout << "CL4P-TP <" << this->getName() << "> attaque <" << target << "> à distance, causant <"
-                  << this->getRangedAttack() << "> points de dégâts !" << std::endl;
-        return this->getRangedAttack();
-    }
-}
 
 void ClapTrap::takeDamage(unsigned int amount) {
     if (amount < this->getArmorDamageReduction()){
-        std::cout << "CL4P-TP <" << this->getName() << "> se fait frapper mais ce n'est pas très efficace..." << std::endl;
+        std::cout << "<" << this->getName() << "> se fait frapper mais ce n'est pas très efficace..." << std::endl;
     }
     else{
-        std::cout << "CL4P-TP <" << this->getName() << "> se fait frapper et reçoit <" << amount << "> point de dégats. Après réduction de l'armure, il pert : <" <<amount - this->getArmorDamageReduction() << "> points de vie !" << std::endl;
+        std::cout << "<" << this->getName() << "> se fait frapper et reçoit <" << amount << "> point de dégats. Après réduction de l'armure, il pert : <" <<amount - this->getArmorDamageReduction() << "> points de vie !" << std::endl;
         if (this->getHitPoints() > (amount - this->getArmorDamageReduction())){
             this->setHitPoints(this->getHitPoints() - (amount - this->getArmorDamageReduction()));
         }
@@ -164,11 +143,11 @@ void ClapTrap::takeDamage(unsigned int amount) {
 
 void ClapTrap::beRepaired(unsigned int amount) {
     this->setHitPoints(this->getHitPoints() + amount);
-    std::cout << "CL4P-TP <" << this->getName() << "> se répare! Il a maintenant : <" <<this->getHitPoints() << "> points de vie !" << std::endl;
+    std::cout << "<" << this->getName() << "> se répare! Il a maintenant : <" <<this->getHitPoints() << "> points de vie !" << std::endl;
 }
 
 void ClapTrap::chargingBattery(unsigned int amount) {
     this->setEnergyPoints(this->getEnergyPoints() + amount);
-    std::cout << "CL4P-TP <" << this->getName() << "> se recharge! Il a maintenant : <" <<this->getEnergyPoints() << "> points d'energie !" << std::endl;
+    std::cout << "<" << this->getName() << "> se recharge! Il a maintenant : <" <<this->getEnergyPoints() << "> points d'energie !" << std::endl;
 }
 

@@ -12,6 +12,9 @@ public:
     NinjaTrap(std::string const &name);
     ~NinjaTrap();
 
+    unsigned int meleeAttack(std::string const &target) const;
+    unsigned int rangedAttack(std::string const &target) const;
+
     void ninjaShoeBox(FragTrap &claptrap);
     void ninjaShoeBox(ScavTrap &claptrap);
     void ninjaShoeBox(ClapTrap &claptrap);

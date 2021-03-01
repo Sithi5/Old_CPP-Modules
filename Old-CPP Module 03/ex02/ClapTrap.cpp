@@ -123,28 +123,7 @@ void ClapTrap::setArmorDamageReduction(unsigned int armorDamageReduction) {
     this->_armor_damage_reduction = armorDamageReduction;
 }
 
-unsigned int ClapTrap::meleeAttack(const std::string &target) const {
-    if (this->getHitPoints() == 0){
-        std::cout << "CL4P-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
-        return 0;
-    }
-    else{
-        std::cout << "CL4P-TP <" << this->getName() << "> attaque <" << target << "> au corp a corp, causant <" << this->getMeleeAttack() << "> points de dégâts !" << std::endl;
-        return this->getMeleeAttack();
-    }
-}
 
-unsigned int ClapTrap::rangedAttack(const std::string &target) const {
-    if (this->getHitPoints() == 0){
-        std::cout << "CL4P-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
-        return 0;
-    }
-    else {
-        std::cout << "CL4P-TP <" << this->getName() << "> attaque <" << target << "> à distance, causant <"
-                  << this->getRangedAttack() << "> points de dégâts !" << std::endl;
-        return this->getRangedAttack();
-    }
-}
 
 void ClapTrap::takeDamage(unsigned int amount) {
     if (amount < this->getArmorDamageReduction()){

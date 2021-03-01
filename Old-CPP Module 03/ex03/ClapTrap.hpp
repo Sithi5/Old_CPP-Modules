@@ -35,9 +35,6 @@ public:
     unsigned int getRangedAttack() const;
     unsigned int getArmorDamageReduction() const;
 
-    unsigned int meleeAttack(std::string const &target) const;
-    unsigned int rangedAttack(std::string const &target) const;
-
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
     void chargingBattery(unsigned int amount);

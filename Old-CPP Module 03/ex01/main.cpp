@@ -12,12 +12,6 @@ int main(void) {
     std::cout << "Bienvenue dans l'arene peuple de la cité impérial ! Pour ce match, nous avons de la chair fraiche, deux nouveaux chiens ! Alors ne perdons pas de temps ! Que la bataille... commence !" << std::endl;
     std::cout << std::endl;
 
-    std::cout << mathieu.getName() << " a " << mathieu.getHitPoints() << " point de vie." << std::endl;
-    std::cout << mathieu.getName() << " a " << mathieu.getEnergyPoints() << " point d'energie." << std::endl;
-
-    std::cout << maboubouce.getName() << " a " << maboubouce.getHitPoints() << " point de vie." << std::endl;
-    std::cout << maboubouce.getName() << " a " << maboubouce.getEnergyPoints() << " point d'energie." << std::endl;
-
     while(mathieu.getHitPoints() > 0 and maboubouce.getHitPoints() > (unsigned int)0){
         std::cout << mathieu.getName() << " a " << mathieu.getHitPoints() << " point de vie." << std::endl;
         std::cout << mathieu.getName() << " a " << mathieu.getEnergyPoints() << " point d'energie." << std::endl;

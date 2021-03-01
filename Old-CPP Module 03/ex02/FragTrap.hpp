@@ -10,6 +10,9 @@ public:
     FragTrap(std::string const &name);
     ~FragTrap();
 
+    unsigned int meleeAttack(std::string const &target) const;
+    unsigned int rangedAttack(std::string const &target) const;
+
     unsigned int echappementCryogénique(std::string const &target) const;
     unsigned int machineDeMort(std::string const &target) const;
     unsigned int rireDiabolique(std::string const &target) const;

@@ -1,24 +1,19 @@
 #include <iostream>
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
 int main(void) {
     srand(time(NULL));
     int random_num;
 
     FragTrap mathieu = FragTrap("Mathieu");
-    ScavTrap maboubouce = ScavTrap("Maboubouce");
+    NinjaTrap maboubouce = NinjaTrap("Maboubouce");
 
     std::cout
             << "Bienvenue dans l'arene peuple de la cité impérial ! Pour ce match, nous avons de la chair fraiche, deux nouveaux chiens ! Alors ne perdons pas de temps ! Que la bataille... commence !"
             << std::endl;
     std::cout << std::endl;
-
-    std::cout << mathieu.getName() << " a " << mathieu.getHitPoints() << " point de vie." << std::endl;
-    std::cout << mathieu.getName() << " a " << mathieu.getEnergyPoints() << " point d'energie." << std::endl;
-
-    std::cout << maboubouce.getName() << " a " << maboubouce.getHitPoints() << " point de vie." << std::endl;
-    std::cout << maboubouce.getName() << " a " << maboubouce.getEnergyPoints() << " point d'energie." << std::endl;
 
     while (mathieu.getHitPoints() > 0 and maboubouce.getHitPoints() > (unsigned int) 0) {
         std::cout << mathieu.getName() << " a " << mathieu.getHitPoints() << " point de vie." << std::endl;
@@ -54,7 +49,7 @@ int main(void) {
         } else if (random_num == 5) {
             maboubouce.chargingBattery((unsigned int) rand() % 40 + 15);
         } else
-            maboubouce.challengeNewcomer();
+            maboubouce.ninjaShoeBox(mathieu);
 
         std::cout << std::endl;
     }
