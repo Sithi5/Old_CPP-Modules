@@ -1,5 +1,4 @@
 #include "TacticalMarine.hpp"
-#include <iostream>
 
 TacticalMarine::TacticalMarine(void) {
 	std::cout << "Tactical Marine ready for action !" << std::endl;

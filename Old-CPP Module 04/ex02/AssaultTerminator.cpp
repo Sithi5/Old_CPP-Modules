@@ -1,5 +1,4 @@
 #include "AssaultTerminator.hpp"
-#include <iostream>
 
 AssaultTerminator::AssaultTerminator(void) {
 	std::cout << "* teleports from space *" << std::endl;

@@ -18,7 +18,6 @@ public:
 
 private:
     ISpaceMarine **_units;
-
 };
 
 #endif
