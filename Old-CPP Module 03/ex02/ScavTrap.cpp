@@ -30,6 +30,21 @@ ScavTrap::~ScavTrap(void) {
     std::cout << this->getName() << " meurt et dit : On est bien seul par ici..." << std::endl;
 }
 
+ScavTrap    &ScavTrap::operator=(ScavTrap const & rhs) {
+    if (this != &rhs) {
+        this->_name = rhs.getName();
+        this->_hit_points = rhs.getHitPoints();
+        this->_max_hit_points = rhs.getMaxHitPoints();
+        this->_energy_points = rhs.getEnergyPoints();
+        this->_max_energy_points = rhs.getMaxEnergyPoints();
+        this->_level = rhs.getLevel();
+        this->_melee_attack = rhs.getMeleeAttack();
+        this->_ranged_attack = rhs.getRangedAttack();
+        this->_armor_damage_reduction = rhs.getArmorDamageReduction();
+    }
+    return *this;
+}
+
 unsigned int ScavTrap::meleeAttack(const std::string &target) const {
     if (this->getHitPoints() == 0){
         std::cout << "SC4V-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;

@@ -9,6 +9,7 @@ public:
     explicit ScavTrap(std::string const &name);
     explicit ScavTrap(void);
     ~ScavTrap(void);
+    ScavTrap & operator=(ScavTrap const &rhs);
 
     unsigned int meleeAttack(std::string const &target) const;
     unsigned int rangedAttack(std::string const &target) const;

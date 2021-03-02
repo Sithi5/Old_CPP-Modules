@@ -9,6 +9,7 @@ public:
     FragTrap(void);
     FragTrap(std::string const &name);
     ~FragTrap();
+    FragTrap & operator=(FragTrap const &rhs);
 
     unsigned int meleeAttack(std::string const &target, std::string const &type) const;
     unsigned int rangedAttack(std::string const &target, std::string const &type) const;
