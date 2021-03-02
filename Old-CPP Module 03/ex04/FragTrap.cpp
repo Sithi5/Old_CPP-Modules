@@ -2,6 +2,7 @@
 
 FragTrap::FragTrap(void)
     : ClapTrap() {
+    std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
     this->setMaxEnergyPoints(100);
     this->setEnergyPoints(100);
     this->setArmorDamageReduction(5);
@@ -11,6 +12,7 @@ FragTrap::FragTrap(void)
 
 FragTrap::FragTrap(std::string const &name)
     : ClapTrap(name) {
+    std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
     this->setMaxEnergyPoints(100);
     this->setEnergyPoints(100);
     this->setArmorDamageReduction(5);
@@ -18,7 +20,10 @@ FragTrap::FragTrap(std::string const &name)
     this->setRangedAttack(20);
 }
 
-FragTrap::~FragTrap() {}
+
+FragTrap::~FragTrap() {
+    std::cout << this->getName() << " meurt et dit : " << "Est-ce que ça veut dire que je peux danser ? Steuplaiiiiiit !" << std::endl;
+}
 
 FragTrap    &FragTrap::operator=(FragTrap const & rhs) {
     if (this != &rhs) {

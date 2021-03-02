@@ -2,28 +2,32 @@
 
 NinjaTrap::NinjaTrap(void)
     : ClapTrap() {
-    this->setHitPoints(60);
     this->setMaxHitPoints(60);
+    this->setHitPoints(60);
     this->setMaxEnergyPoints(120);
     this->setEnergyPoints(120);
     this->setArmorDamageReduction(0);
     this->setMeleeAttack(60);
     this->setRangedAttack(5);
+    std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
 }
 
 NinjaTrap::NinjaTrap(std::string const &name)
     : ClapTrap(name) {
-    this->setHitPoints(60);
     this->setMaxHitPoints(60);
+    this->setHitPoints(60);
     this->setMaxEnergyPoints(120);
     this->setEnergyPoints(120);
     this->setArmorDamageReduction(0);
     this->setMeleeAttack(60);
     this->setRangedAttack(5);
+    std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
 }
 
 
-NinjaTrap::~NinjaTrap() {}
+NinjaTrap::~NinjaTrap() {
+    std::cout << this->getName() << " meurt et dit : " << "Est-ce que ça veut dire que je peux danser ? Steuplaiiiiiit !" << std::endl;
+}
 
 NinjaTrap    &NinjaTrap::operator=(NinjaTrap const & rhs) {
     if (this != &rhs) {
@@ -46,7 +50,7 @@ unsigned int NinjaTrap::meleeAttack(const std::string &target, std::string const
         return 0;
     }
     else{
-        std::cout << type << " <" << this->getName() << "> attaque <" << target << "> au corp a corp, causant <" << this->getMeleeAttack() << "> points de dégâts !" << std::endl;
+        std::cout << type << " <" << this->getName() << "> attaque <" << target << "> au corps a corps, causant <" << this->getMeleeAttack() << "> points de dégâts !" << std::endl;
         return this->getMeleeAttack();
     }
 }
