@@ -1,7 +1,8 @@
 #include "NinjaTrap.hpp"
 
 NinjaTrap::NinjaTrap(void)
-    : ClapTrap() {
+    : ClapTrap()
+{
     this->setHitPoints(60);
     this->setMaxHitPoints(60);
     this->setMaxEnergyPoints(120);
@@ -9,11 +10,13 @@ NinjaTrap::NinjaTrap(void)
     this->setArmorDamageReduction(0);
     this->setMeleeAttack(60);
     this->setRangedAttack(5);
-    std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
+    std::cout << this->getName() << " se réveille dans la décharge et dit : "
+              << "Hahaha, hahaha, je ressuscite." << std::endl;
 }
 
 NinjaTrap::NinjaTrap(std::string const &name)
-    : ClapTrap(name) {
+    : ClapTrap(name)
+{
     this->setHitPoints(60);
     this->setMaxHitPoints(60);
     this->setMaxEnergyPoints(120);
@@ -21,54 +24,84 @@ NinjaTrap::NinjaTrap(std::string const &name)
     this->setArmorDamageReduction(0);
     this->setMeleeAttack(60);
     this->setRangedAttack(5);
-    std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
+    std::cout << this->getName() << " se réveille dans la décharge et dit : "
+              << "Hahaha, hahaha, je ressuscite." << std::endl;
 }
 
-
-NinjaTrap::~NinjaTrap() {
-    std::cout << this->getName() << " meurt et dit : " << "Est-ce que ça veut dire que je peux danser ? Steuplaiiiiiit !" << std::endl;
+NinjaTrap::~NinjaTrap()
+{
+    std::cout << this->getName() << " meurt et dit : "
+              << "Est-ce que ça veut dire que je peux danser ? Steuplaiiiiiit !" << std::endl;
 }
 
-NinjaTrap::NinjaTrap (NinjaTrap const &src) {
+NinjaTrap::NinjaTrap(NinjaTrap const &src)
+{
     *this = src;
-    return ;
+    return;
 }
 
-unsigned int NinjaTrap::meleeAttack(const std::string &target) const {
-    if (this->getHitPoints() == 0){
-        std::cout << "NINJ4-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
+NinjaTrap &NinjaTrap::operator=(NinjaTrap const &rhs)
+{
+    if (this != &rhs)
+    {
+        this->_name = rhs.getName();
+        this->_hit_points = rhs.getHitPoints();
+        this->_max_hit_points = rhs.getMaxHitPoints();
+        this->_energy_points = rhs.getEnergyPoints();
+        this->_max_energy_points = rhs.getMaxEnergyPoints();
+        this->_level = rhs.getLevel();
+        this->_melee_attack = rhs.getMeleeAttack();
+        this->_ranged_attack = rhs.getRangedAttack();
+        this->_armor_damage_reduction = rhs.getArmorDamageReduction();
+    }
+    return *this;
+}
+
+unsigned int NinjaTrap::meleeAttack(const std::string &target) const
+{
+    if (this->getHitPoints() == 0)
+    {
+        std::cout << "NINJ4-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <" << this->getName() << ">..." << std::endl;
         return 0;
     }
-    else{
+    else
+    {
         std::cout << "NINJ4-TP <" << this->getName() << "> attaque <" << target << "> au corp a corp, causant <" << this->getMeleeAttack() << "> points de dégâts !" << std::endl;
         return this->getMeleeAttack();
     }
 }
 
-unsigned int NinjaTrap::rangedAttack(const std::string &target) const {
-    if (this->getHitPoints() == 0){
-        std::cout << "NINJ4-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;
+unsigned int NinjaTrap::rangedAttack(const std::string &target) const
+{
+    if (this->getHitPoints() == 0)
+    {
+        std::cout << "NINJ4-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <" << this->getName() << ">..." << std::endl;
         return 0;
     }
-    else {
+    else
+    {
         std::cout << "NINJ4-TP <" << this->getName() << "> attaque <" << target << "> à distance, causant <"
                   << this->getRangedAttack() << "> points de dégâts !" << std::endl;
         return this->getRangedAttack();
     }
 }
 
-void NinjaTrap::ninjaShoeBox(ScavTrap &claptrap){
+void NinjaTrap::ninjaShoeBox(ScavTrap &claptrap)
+{
     std::cout << "NINJ4-TP <" << this->getName() << "> copie " << claptrap.getName() << " et fait un bottle flip Challenge.";
 }
 
-void NinjaTrap::ninjaShoeBox(FragTrap &claptrap){
+void NinjaTrap::ninjaShoeBox(FragTrap &claptrap)
+{
     std::cout << "NINJ4-TP <" << this->getName() << "> copie " << claptrap.getName() << " et fait un Rire diabolique." << std::endl;
 }
 
-void NinjaTrap::ninjaShoeBox(NinjaTrap &claptrap){
+void NinjaTrap::ninjaShoeBox(NinjaTrap &claptrap)
+{
     std::cout << "NINJ4-TP <" << this->getName() << "> copie " << claptrap.getName() << " et lance un kage bunshin no jutsu." << std::endl;
 }
 
-void NinjaTrap::ninjaShoeBox(ClapTrap &claptrap){
+void NinjaTrap::ninjaShoeBox(ClapTrap &claptrap)
+{
     std::cout << "NINJ4-TP <" << this->getName() << "> copie " << claptrap.getName() << " et lance un Yakuza Bunshin no Jutsu." << std::endl;
 }

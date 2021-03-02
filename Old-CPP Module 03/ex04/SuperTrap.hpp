@@ -12,6 +12,7 @@ public:
     SuperTrap(std::string const &name);
     SuperTrap(SuperTrap const &src);
     ~SuperTrap();
+    SuperTrap & operator=(SuperTrap const &rhs);
 
     unsigned int rangedAttack(std::string const &target, std::string const &type);
     unsigned int meleeAttack(std::string const &target, std::string const &type);
