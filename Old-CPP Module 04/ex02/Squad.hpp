@@ -2,24 +2,23 @@
 #define TEST_SQUAD_HPP
 
 #include "ISquad.hpp"
+#include <iostream>
 
 class Squad: public ISquad {
 public:
-    Squad();
+    Squad(void);
     Squad(Squad const &copy);
-    virtual ~Squad();
+    virtual ~Squad(void);
 
     Squad & operator=(const Squad &rhs);
 
-    int getCount() const override;
-    ISpaceMarine* getUnit(int N) const override;
-    int push(ISpaceMarine *) override;
+    virtual int getCount() const;
+    virtual ISpaceMarine* getUnit(int N) const;
+    virtual int push(ISpaceMarine *);
 
 private:
-    int _n;
-    ISpaceMarine *_units[];
+    ISpaceMarine **_units;
 
 };
 
-
-#endif //TEST_SQUAD_HPP
+#endif

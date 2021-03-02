@@ -1,5 +1,5 @@
 #ifndef TEST_ISPACEMARINE_HPP
-#define TEST_ISPACEMARINE_HPP
+# define TEST_ISPACEMARINE_HPP
 
 class ISpaceMarine
 {
@@ -11,4 +11,4 @@ public:
     virtual void meleeAttack() const = 0;
 };
 
-#endif //TEST_ISPACEMARINE_HPP
+#endif
