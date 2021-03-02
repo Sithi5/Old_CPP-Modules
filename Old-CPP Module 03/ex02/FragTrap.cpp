@@ -25,7 +25,10 @@ FragTrap::~FragTrap() {
     std::cout << this->getName() << " meurt et dit : " << "Est-ce que ça veut dire que je peux danser ? Steuplaiiiiiit !" << std::endl;
 }
 
-
+FragTrap::FragTrap (FragTrap const &src) {
+    *this = src;
+    return ;
+}
 
 unsigned int FragTrap::echappementCryogénique(const std::string &target) const {
     if (this->getHitPoints() == 0){

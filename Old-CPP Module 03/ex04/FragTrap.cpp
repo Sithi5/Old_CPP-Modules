@@ -25,6 +25,11 @@ FragTrap::~FragTrap() {
     std::cout << this->getName() << " meurt et dit : " << "Est-ce que ça veut dire que je peux danser ? Steuplaiiiiiit !" << std::endl;
 }
 
+FragTrap::FragTrap (FragTrap const &src) {
+    *this = src;
+    return ;
+}
+
 unsigned int FragTrap::meleeAttack(const std::string &target, std::string const &type) const {
     if (this->getHitPoints() == 0){
         std::cout << type << " <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;

@@ -8,6 +8,7 @@ class ScavTrap: public ClapTrap {
 public:
     explicit ScavTrap(std::string const &name);
     explicit ScavTrap(void);
+    ScavTrap(ScavTrap const &src);
     ~ScavTrap(void);
 
     unsigned int meleeAttack(std::string const &target) const;

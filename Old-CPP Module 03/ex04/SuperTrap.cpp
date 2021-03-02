@@ -29,6 +29,11 @@ SuperTrap::~SuperTrap() {
     std::cout << "SuperTrap destructor called." << std::endl;
 }
 
+SuperTrap::SuperTrap (SuperTrap const &src) {
+    *this = src;
+    return ;
+}
+
 unsigned int SuperTrap::meleeAttack(std::string const &target, std::string const &type)
 {
     return (NinjaTrap::meleeAttack(target, type));

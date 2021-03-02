@@ -29,6 +29,11 @@ NinjaTrap::~NinjaTrap() {
     std::cout << this->getName() << " meurt et dit : " << "Est-ce que ça veut dire que je peux danser ? Steuplaiiiiiit !" << std::endl;
 }
 
+NinjaTrap::NinjaTrap (NinjaTrap const &src) {
+    *this = src;
+    return ;
+}
+
 unsigned int NinjaTrap::meleeAttack(const std::string &target) const {
     if (this->getHitPoints() == 0){
         std::cout << "NINJ4-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;

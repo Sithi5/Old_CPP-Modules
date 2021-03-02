@@ -10,6 +10,7 @@ class NinjaTrap : public virtual ClapTrap{
 public:
     NinjaTrap(void);
     NinjaTrap(std::string const &name);
+    NinjaTrap(NinjaTrap const &src);
     ~NinjaTrap();
 
     unsigned int meleeAttack(std::string const &target, std::string const &type) const;

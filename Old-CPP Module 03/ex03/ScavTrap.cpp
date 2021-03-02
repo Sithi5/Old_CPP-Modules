@@ -30,6 +30,11 @@ ScavTrap::~ScavTrap(void) {
     std::cout << this->getName() << " meurt et dit : On est bien seul par ici..." << std::endl;
 }
 
+ScavTrap::ScavTrap (ScavTrap const &src) {
+    *this = src;
+    return ;
+}
+
 unsigned int ScavTrap::meleeAttack(const std::string &target) const {
     if (this->getHitPoints() == 0){
         std::cout << "SC4V-TP <" << this->getName() << "> est hors-service, il faut le réparer !!! Pauvre <"<< this->getName() << ">..." << std::endl;

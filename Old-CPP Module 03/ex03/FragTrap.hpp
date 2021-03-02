@@ -8,6 +8,7 @@ class FragTrap : public ClapTrap{
 public:
     FragTrap(void);
     FragTrap(std::string const &name);
+    FragTrap(FragTrap const &src);
     ~FragTrap();
 
     unsigned int meleeAttack(std::string const &target) const;

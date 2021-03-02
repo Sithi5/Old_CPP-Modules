@@ -24,9 +24,13 @@ NinjaTrap::NinjaTrap(std::string const &name)
     std::cout << this->getName() << " se réveille dans la décharge et dit : " << "Hahaha, hahaha, je ressuscite." << std::endl;
 }
 
-
 NinjaTrap::~NinjaTrap() {
     std::cout << this->getName() << " meurt et dit : " << "Est-ce que ça veut dire que je peux danser ? Steuplaiiiiiit !" << std::endl;
+}
+
+NinjaTrap::NinjaTrap (NinjaTrap const &src) {
+    *this = src;
+    return ;
 }
 
 unsigned int NinjaTrap::meleeAttack(const std::string &target, std::string const &type) const {
