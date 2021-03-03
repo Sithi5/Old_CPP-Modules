@@ -1,11 +1,9 @@
 #include "Squad.hpp"
 
 Squad::Squad(void) : _units_list(NULL) {
-    std::cout << "squad constructor called." <<std::endl;
 }
 
 Squad::~Squad(void) {
-    std::cout << "squad destructor called." <<std::endl;
     if (this->_units_list){
         t_list *prev = this->_units_list;
         while (this->_units_list) {
@@ -18,7 +16,6 @@ Squad::~Squad(void) {
 }
 
 Squad::Squad(const Squad &copy) {
-    std::cout << "squad cpy constructor called."<<std::endl;
     if (this != &copy)
     {
         if (this->_units_list) {
@@ -39,7 +36,6 @@ Squad::Squad(const Squad &copy) {
 }
 
 Squad &Squad::operator=(const Squad &rhs) {
-    std::cout << "eq operator called." <<std::endl;
     if (this != &rhs)
     {
         if (this->_units_list){
