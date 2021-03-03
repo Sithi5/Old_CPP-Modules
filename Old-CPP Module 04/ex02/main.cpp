@@ -21,13 +21,11 @@ int main()
 //    pushing null spacemarine
     squad->push(nullos);
 
-
     //    already in squad jim
     squad->push(jim);
 
     squad->push(dad);
     squad->push(mom);
-
 
     std::cout << std::endl << "PRINTING ALL UNITS AND ATTACKS OF THE SQUAD" <<std::endl<<std::endl;
 
@@ -41,7 +39,6 @@ int main()
         std::cout <<std::endl;
     }
 
-
     std::cout << std::endl << "TEST EMPTY SQUAD" <<std::endl<<std::endl;
 
 //    try empty squad
@@ -50,18 +47,31 @@ int main()
     empty_squad->getUnit(10);
     empty_squad->getUnit(0);
 
-
     std::cout << std::endl << "TEST CPY SQUAD" <<std::endl<<std::endl;
 
+    ISpaceMarine* deam = new TacticalMarine();
+    ISpaceMarine* dame = new AssaultTerminator();
+    ISpaceMarine* door = new AssaultTerminator();
+
 //    try cpy squad
-    ISquad* cpy_squad = new Squad();
-    cpy_squad->push(jim);
-    cpy_squad->push(dad);
-    cpy_squad = squad;
-    cpy_squad->getUnit(3)->battleCry();
+    Squad to_cpy;
+    to_cpy.push(dame);
+    Squad* cpied = new Squad(to_cpy);
+    cpied->push(deam);
+    cpied->push(door);
+
+    std::cout << std::endl << "TEST EQ OPERATOR" <<std::endl<<std::endl;
+
+    Squad* cpy_squad = new Squad();
+    cpy_squad->push(bob->clone());
+    cpy_squad->getUnit(0)->battleCry();
+    *cpy_squad = *cpied;
+    cpy_squad->getUnit(0)->battleCry();
 
     std::cout << std::endl << "DELETING SQUAD" <<std::endl<<std::endl;
     delete empty_squad;
     delete squad;
+    delete cpied;
+    delete cpy_squad;
     return 0;
 }

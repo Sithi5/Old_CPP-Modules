@@ -6,12 +6,14 @@ Squad::Squad(void) : _units_list(NULL) {
 
 Squad::~Squad(void) {
     std::cout << "squad destructor called." <<std::endl;
-    t_list *prev = this->_units_list;
-    while (this->_units_list) {
-        this->_units_list = this->_units_list->next;
-        delete prev->unit;
-        delete prev;
-        prev = this->_units_list;
+    if (this->_units_list){
+        t_list *prev = this->_units_list;
+        while (this->_units_list) {
+            this->_units_list = this->_units_list->next;
+            delete prev->unit;
+            delete prev;
+            prev = this->_units_list;
+        }
     }
 }
 
@@ -19,16 +21,18 @@ Squad::Squad(const Squad &copy) {
     std::cout << "squad cpy constructor called."<<std::endl;
     if (this != &copy)
     {
-        t_list *prev = this->_units_list;
-        while (this->_units_list) {
-            this->_units_list = this->_units_list->next;
-            delete prev->unit;
-            delete prev;
-        }
+        if (this->_units_list) {
 
+            t_list *prev = this->_units_list;
+            while (this->_units_list) {
+                this->_units_list = this->_units_list->next;
+                delete prev->unit;
+                delete prev;
+            }
+        }
         t_list *copy_units_list = copy._units_list;
         while (copy_units_list) {
-            this->push(copy_units_list->unit);
+            this->push(copy_units_list->unit->clone());
             copy_units_list = copy_units_list->next;
         }
     }
@@ -38,16 +42,18 @@ Squad &Squad::operator=(const Squad &rhs) {
     std::cout << "eq operator called." <<std::endl;
     if (this != &rhs)
     {
-        t_list *prev = this->_units_list;
-        while (this->_units_list) {
-            this->_units_list = this->_units_list->next;
-            delete prev->unit;
-            delete prev;
+        if (this->_units_list){
+            t_list *prev = this->_units_list;
+            while (this->_units_list) {
+                this->_units_list = this->_units_list->next;
+                delete prev->unit;
+                delete prev;
+            }
         }
 
         t_list *rhs_units_list = rhs._units_list;
         while (rhs_units_list) {
-            this->push(rhs_units_list->unit);
+            this->push(rhs_units_list->unit->clone());
             rhs_units_list = rhs_units_list->next;
         }
     }
