@@ -7,7 +7,8 @@
 class AssaultTerminator : public ISpaceMarine
 {
 public:
-	AssaultTerminator(void);
+    AssaultTerminator(void);
+    AssaultTerminator(std::string name);
 	AssaultTerminator(AssaultTerminator const &copy);
 	virtual ~AssaultTerminator(void);
 	AssaultTerminator &	operator=(AssaultTerminator const &rhs);
@@ -16,6 +17,13 @@ public:
 	virtual void battleCry() const;
 	virtual void rangedAttack() const;
 	virtual void meleeAttack() const;
+
+    const std::string &getName() const;
+    void setName(const std::string &name);
+
+private:
+    std::string _name;
+
 };
 
 #endif

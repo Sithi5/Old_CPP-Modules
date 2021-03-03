@@ -1,42 +1,80 @@
 #include "Squad.hpp"
 
-Squad::Squad(void) : _units(NULL) {}
+Squad::Squad(void) : _units_list(NULL) {
+    std::cout << "squad constructor called." <<std::endl;
+}
 
 Squad::~Squad(void) {
-    for (int i = 0; i < this->getCount(); i++){
-        delete this->_units[i];
+    std::cout << "squad destructor called." <<std::endl;
+    t_list *prev = this->_units_list;
+    while (this->_units_list) {
+        this->_units_list = this->_units_list->next;
+        delete prev->unit;
+        delete prev;
+        prev = this->_units_list;
     }
-    delete [] this->_units;
 }
 
 Squad::Squad(const Squad &copy) {
-    *this = copy;
+    std::cout << "squad cpy constructor called."<<std::endl;
+    if (this != &copy)
+    {
+        t_list *prev = this->_units_list;
+        while (this->_units_list) {
+            this->_units_list = this->_units_list->next;
+            delete prev->unit;
+            delete prev;
+        }
+
+        t_list *copy_units_list = copy._units_list;
+        while (copy_units_list) {
+            this->push(copy_units_list->unit);
+            copy_units_list = copy_units_list->next;
+        }
+    }
 }
 
 Squad &Squad::operator=(const Squad &rhs) {
+    std::cout << "eq operator called." <<std::endl;
     if (this != &rhs)
     {
-        for (int i = 0; i < this->getCount(); i++){
-            delete this->_units[i];
-            this->_units[i] = NULL;
+        t_list *prev = this->_units_list;
+        while (this->_units_list) {
+            this->_units_list = this->_units_list->next;
+            delete prev->unit;
+            delete prev;
         }
-        for (int i = 0; i < rhs.getCount(); i++){
-            this->push(rhs._units[i]);
+
+        t_list *rhs_units_list = rhs._units_list;
+        while (rhs_units_list) {
+            this->push(rhs_units_list->unit);
+            rhs_units_list = rhs_units_list->next;
         }
     }
     return (*this);
 }
 
 int Squad::getCount() const {
+    t_list *list = this->_units_list;
     int count = 0;
-    while (this->_units && this->_units[count])
+
+    while (list){
         count++;
+        list = list->next;
+    }
     return count;
 }
 
 ISpaceMarine* Squad::getUnit(int N) const {
-    if (N >= 0 && N < this->getCount())
-        return this->_units[N];
+    t_list *list = this->_units_list;
+
+    if (N >= 0 && N < this->getCount()){
+        while (N > 0){
+            list = list->next;
+            N--;
+        }
+        return list->unit;
+    }
     else
     {
         std::cout << "SpaceMarine number " << N;
@@ -49,10 +87,36 @@ ISpaceMarine* Squad::getUnit(int N) const {
 int Squad::push(ISpaceMarine *newSpaceMarine) {
     if (newSpaceMarine != NULL)
     {
-        for (int i = 0; i < this->getCount(); i++)
-            if (this->_units[i] == newSpaceMarine)
-                return -1;
-        this->_units[this->getCount()] = newSpaceMarine;
+        if (this->_units_list){
+            if (this->_units_list->unit == newSpaceMarine){
+                std::cout << "The unit is already in the squad." << std::endl;
+                return 1;
+            }
+            t_list *root = this->_units_list;
+            t_list *new_unit = new t_list;
+            new_unit->next = NULL;
+            new_unit->unit = newSpaceMarine;
+
+            while (this->_units_list->next) {
+                this->_units_list = this->_units_list->next;
+                if (this->_units_list->unit == newSpaceMarine){
+                    std::cout << "The unit is already in the squad." << std::endl;
+                    delete new_unit;
+                    this->_units_list = root;
+                    return 1;
+                }
+            }
+            this->_units_list->next = new_unit;
+            this->_units_list = root;
+            return 0;
+        }
+        else{
+            this->_units_list = new t_list;
+            this->_units_list->next = NULL;
+            this->_units_list->unit = newSpaceMarine;
+            return 0;
+        }
     }
-    return this->getCount();
+    std::cout << "Cannot add a NULL unit ;)." << std::endl;
+    return 1;
 }

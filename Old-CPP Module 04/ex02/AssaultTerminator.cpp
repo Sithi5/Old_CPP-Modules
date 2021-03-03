@@ -32,3 +32,11 @@ void AssaultTerminator::rangedAttack() const {
 void AssaultTerminator::meleeAttack() const {
 	std::cout << "* attaque with chainfists *" << std::endl;
 }
+
+const std::string &AssaultTerminator::getName() const {
+    return this->_name;
+}
+
+void AssaultTerminator::setName(const std::string &name) {
+    this->_name = name;
+}

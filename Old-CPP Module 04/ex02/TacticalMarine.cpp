@@ -1,15 +1,16 @@
 #include "TacticalMarine.hpp"
 
-TacticalMarine::TacticalMarine(void) {
-	std::cout << "Tactical Marine ready for action !" << std::endl;
+TacticalMarine::TacticalMarine(void){
+    std::cout << "Tactical Marine ready for action !" << std::endl;
 }
+
 
 TacticalMarine::TacticalMarine(TacticalMarine const &copy) {
 	*this = copy;
 }
 
 TacticalMarine::~TacticalMarine(void) {
-	std::cout <<  "Aaargh ..." << std::endl;
+    std::cout <<  "Aaargh ..." << std::endl;
 }
 
 TacticalMarine & TacticalMarine::operator=(TacticalMarine const &rhs)

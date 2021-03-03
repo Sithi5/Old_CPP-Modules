@@ -17,7 +17,13 @@ public:
     virtual int push(ISpaceMarine *);
 
 private:
-    ISpaceMarine **_units;
+
+    typedef struct      s_list{
+        ISpaceMarine    *unit;
+        struct s_list   *next;
+    }                   t_list;
+
+    t_list *_units_list;
 };
 
 #endif
