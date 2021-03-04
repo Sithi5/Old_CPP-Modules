@@ -6,6 +6,8 @@ MateriaSource::MateriaSource() {
     }
 }
 
+MateriaSource::~MateriaSource(){}
+
 void MateriaSource::learnMateria(AMateria *m) {
     for (int i = 0; i < 4; i++) {
         if (!this->_knowledge[i]) {
@@ -19,7 +21,7 @@ void MateriaSource::learnMateria(AMateria *m) {
 
 AMateria *MateriaSource::createMateria(const std::string &type) {
     for (int i = 0; i < 4; i++) {
-        if (!(this->_knowledge[i]->getType().compare(type))) {
+        if (this->_knowledge[i] && !(this->_knowledge[i]->getType().compare(type))) {
             return this->_knowledge[i]->clone();
         }
     }

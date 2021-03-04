@@ -5,13 +5,15 @@
 
 #include "ICharacter.hpp"
 
+class ICharacter;
+
 class AMateria {
 private:
     std::string const _type;
     unsigned int _xp;
+    AMateria();
 
 protected:
-    AMateria();
 
 public:
     AMateria(const std::string &type);

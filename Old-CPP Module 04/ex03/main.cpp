@@ -6,17 +6,18 @@
 #include "Cure.hpp"
 
 
-int main() {
-    IMateriaSource *src = new MateriaSource();
+int main()
+{
+    IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
-    ICharacter *moi = new Character("moi");
-    AMateria *tmp;
+    ICharacter* moi = new Character("moi");
+    AMateria* tmp;
     tmp = src->createMateria("ice");
     moi->equip(tmp);
     tmp = src->createMateria("cure");
     moi->equip(tmp);
-    ICharacter *bob = new Character("bob");
+    ICharacter* bob = new Character("bob");
     moi->use(0, *bob);
     moi->use(1, *bob);
     delete bob;

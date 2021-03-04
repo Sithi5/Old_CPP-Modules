@@ -13,7 +13,7 @@ public:
 
     virtual void use(ICharacter &target);
 
-    virtual Ice *clone() const;
+    virtual AMateria *clone() const;
 };
 
 
