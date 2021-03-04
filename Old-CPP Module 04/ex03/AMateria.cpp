@@ -8,7 +8,7 @@ AMateria::~AMateria() {
 }
 
 std::string const &AMateria::getType() const {
-    this->_type;
+    return this->_type;
 }
 
 unsigned int AMateria::getXP() const {

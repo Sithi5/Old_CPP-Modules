@@ -1,9 +1,9 @@
+#include "ICharacter.hpp"
+#include "Character.hpp"
 #include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
-#include "ICharacter.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
-#include "Character.hpp"
 
 
 int main() {

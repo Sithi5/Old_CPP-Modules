@@ -1,7 +1,8 @@
-#ifndef TEST_AMATERIAL_HPP
-#define TEST_AMATERIAL_HPP
+#ifndef EX03_AMATERIA_HPP
+#define EX03_AMATERIA_HPP
 
 #include <iostream>
+
 #include "ICharacter.hpp"
 
 class AMateria {
@@ -28,4 +29,4 @@ public:
 };
 
 
-#endif //TEST_AMATERIAL_HPP
+#endif //EX03_AMATERIA_HPP

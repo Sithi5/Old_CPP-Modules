@@ -21,7 +21,7 @@ public:
 
     virtual void unequip(int idx);
 
-    virtual void use(int idx, Character &target);
+    virtual void use(int idx, ICharacter &target);
 
 private:
     std::string _name;

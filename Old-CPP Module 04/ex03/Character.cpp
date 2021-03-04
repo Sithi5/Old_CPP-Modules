@@ -6,7 +6,7 @@ Character::Character(const std::string &name) : _name(name) {
     }
 }
 
-Character::Character(Character const &copy) : {
+Character::Character(Character const &copy) {
     if (this != &copy) {
         this->_name = std::string(copy.getName());
         for (int i = 0; i < 4; i++) {
@@ -54,7 +54,7 @@ void Character::unequip(int idx) {
     return;
 }
 
-void Character::use(int idx, Character &target) {
+void Character::use(int idx, ICharacter &target) {
     if (this->_inventory[idx]) {
         this->_inventory[idx]->use(target);
     } else {

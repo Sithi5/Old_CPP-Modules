@@ -12,7 +12,7 @@ Ice &Ice::operator=(Ice const &rhs) {
 }
 
 void Ice::use(ICharacter &target) {
-    std::cout << this->getType() << " : \"* shoots an ice bolt at " << target << " *\"" << std::endl;
+    std::cout << this->getType() << " : \"* shoots an ice bolt at " << target.getName() << " *\"" << std::endl;
     this->setXp(this->getXP() + 10);
 }
 

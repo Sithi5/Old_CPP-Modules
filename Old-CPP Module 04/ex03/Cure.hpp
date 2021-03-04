@@ -1,9 +1,10 @@
-#ifndef EX03_ICE_HPP
-#define EX03_ICE_HPP
+#ifndef EX03_CURE_HPP
+#define EX03_CURE_HPP
 
 #include "AMateria.hpp"
 
 class Cure : public AMateria {
+public:
     Cure();
 
     Cure(Cure const &copy);
@@ -16,4 +17,4 @@ class Cure : public AMateria {
 };
 
 
-#endif //EX03_ICE_HPP
+#endif //EX03_CURE_HPP
