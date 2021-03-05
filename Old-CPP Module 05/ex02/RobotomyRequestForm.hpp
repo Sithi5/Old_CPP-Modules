@@ -1,0 +1,11 @@
+
+#ifndef TEST_ROBOTOMYREQUESTFORM_HPP
+#define TEST_ROBOTOMYREQUESTFORM_HPP
+
+
+class RobotomyRequestForm {
+
+};
+
+
+#endif //TEST_ROBOTOMYREQUESTFORM_HPP
