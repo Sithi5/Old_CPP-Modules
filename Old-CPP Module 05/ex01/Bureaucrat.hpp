@@ -1,10 +1,13 @@
 #ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
-#include <iostream>
+# include <iostream>
+# include "Form.hpp"
 
 class Bureaucrat
 {
+
+
 public:
 	Bureaucrat(std::string const &name, int grade);
 	Bureaucrat(Bureaucrat const &copy);
@@ -22,6 +25,8 @@ public:
 	public:
 		virtual const char *what() const throw();
 	};
+
+    void Bureaucrat::signForm(Form *form) const;
 
 	std::string getName(void) const;
 	int getGrade(void) const;
