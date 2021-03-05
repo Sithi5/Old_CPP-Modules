@@ -10,7 +10,7 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade)
 	this->_grade = grade;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &copy): _name(copy.getName()) { *this = copy; }
+Bureaucrat::Bureaucrat(Bureaucrat const &copy) : _name(copy.getName()) { *this = copy; }
 
 Bureaucrat::~Bureaucrat()
 {
@@ -64,19 +64,19 @@ void Bureaucrat::decrementGrade(void)
 
 void Bureaucrat::signForm(Form *form) const
 {
-    if (form->isIsSigned())
-    {
-        std::cout << this << " cannot sign " << form << " because the form is already signed." << std::endl;
-    }
-    else if (form->getSignedGrade() < this->getGrade())
-    {
-        std::cout << this << " cannot sign " << form << " because it's grade is too low." << std::endl;
-    }
-    else
-    {
-        std::cout << this << " signs " << form << std::endl;
-    }
-    form->beSigned(this);
+	if (form->isIsSigned())
+	{
+		std::cout << this << " cannot sign " << form << " because the form is already signed." << std::endl;
+	}
+	else if (form->getSignedGrade() < this->getGrade())
+	{
+		std::cout << this << " cannot sign " << form << " because it's grade is too low." << std::endl;
+	}
+	else
+	{
+		std::cout << this << " signs " << form << std::endl;
+	}
+	form->beSigned(*this);
 }
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs)
