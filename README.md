@@ -57,11 +57,11 @@ This first module of C++ is designed to help you understand the specifities of t
 
 | Exercise | Name | Finished |
 |:--------:|:---------------------------------------------------------------------------:|:----------------:|
-| 00       | Polymorphism, or "When the sorcerer thinks <br/> you’d be cuter as a sheep" |                  |
-| 01       | I don’t want to set the world on fire                                       |                  |
-| 02       | This code is unclean. PURIFY IT!                                            |                  |
-| 03       | Bocal Fantasy                                                               |                  |
-| 04       | AFK Mining                                                                  |                  |
+| 00       | Polymorphism, or "When the sorcerer thinks <br/> you’d be cuter as a sheep" |:heavy_check_mark:|
+| 01       | I don’t want to set the world on fire                                       |:heavy_check_mark:|
+| 02       | This code is unclean. PURIFY IT!                                            |:heavy_check_mark:|
+| 03       | Bocal Fantasy                                                               |:heavy_check_mark:|
+| 04       | AFK Mining                                                                  |:heavy_check_mark:|
 
 ## Module 05
 
