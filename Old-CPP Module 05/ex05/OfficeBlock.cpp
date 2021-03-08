@@ -1,3 +1,4 @@
+
 #include "OfficeBlock.hpp"
 
 OfficeBlock::OfficeBlock() : _first_bureaucrat(NULL), _second_bureaucrat(NULL), _intern(NULL) {}
@@ -41,6 +42,7 @@ void OfficeBlock::doBureaucracy(const std::string &name, const std::string &targ
     try{
         Form *new_form = this->getIntern()->makeForm(name, target);
         new_form->beSigned(*(this->getFirstBureaucrat()));
+        std::cout << "executor lvl = " << this->getSecondBureaucrat()->getGrade() << std::endl;
         new_form->execute(*(this->getSecondBureaucrat()));
     }
     catch(Intern::InternIsDummException){
@@ -58,7 +60,6 @@ void OfficeBlock::doBureaucracy(const std::string &name, const std::string &targ
     catch(Form::UnsignedFormException){
         throw OfficeBlock::OfficeChaos();
     }
-    catch()
 }
 
 const char *OfficeBlock::OfficeBlockMissSomeone::what() const throw() {

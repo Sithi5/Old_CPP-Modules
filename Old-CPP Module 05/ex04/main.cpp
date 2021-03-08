@@ -39,3 +39,28 @@ int main(void)
 
     return (0);
 }
+//
+//int main()
+//{
+//    Intern idiotOne;
+//    Bureaucrat hermes = Bureaucrat("Hermes Conrad", 37);
+//    Bureaucrat bob = Bureaucrat("Bobby Bobson", 123);
+//    OfficeBlock ob;
+//    ob.setIntern(&idiotOne);
+//    ob.setFirstBureaucrat(&bob);
+//    ob.setSecondBureaucrat(&hermes);
+//    try
+//    {
+//        ob.doBureaucracy("mutant pig termination", "Pigley");
+//    }
+//    catch (OfficeBlock::OfficeInternIsDumm &e)
+//    {
+//        std::cerr << e.what() << std::endl;
+///* specific known error happens, say something */
+//    }
+//    catch (std::exception & e)
+//    {
+//        std::cerr << "unknow exception : "<< e.what() << std::endl;
+///* oh god, unknown error, what to do ?! */
+//    }
+//}
