@@ -31,7 +31,6 @@ int main(void)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << "end" << std::endl;
 	try
 	{
 		boss.signForm(schrub);
@@ -45,5 +44,14 @@ int main(void)
 	schrub->execute(boss);
 	pardon->execute(boss);
 	robo->execute(boss);
-	return (0);
+
+	try{
+        Form *failed = intern.makeForm("robototo", "ALED");
+        (void) failed;
+    }
+	catch (Intern::InternIsDummException const &e){
+        std::cerr << e.what() << std::endl;
+	}
+
+    return (0);
 }

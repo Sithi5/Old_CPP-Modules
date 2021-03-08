@@ -28,7 +28,6 @@ int main(void)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << "end" << std::endl;
 	try
 	{
 		boss.signForm(schrub);

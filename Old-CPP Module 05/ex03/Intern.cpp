@@ -13,6 +13,13 @@ Intern & Intern::operator=(Intern const &rhs) {
 	return *this;
 }
 
+
+const char *Intern::InternIsDummException::what() const throw()
+{
+    return "The intern don't know how to do this form.";
+}
+
+
 Form *Intern::makeShrubberyCreationForm(std::string const &target) {
     return new ShrubberyCreationForm(target);
 }
@@ -42,14 +49,12 @@ Form * Intern::makeForm(std::string const &name, std::string const &target){
 	{
 		if (!(key[i].compare(name)))
 		{
-            std::cout << "i is : " << i << std::endl;
-            std::cout << "name is : " << name << std::endl;
 			Form *newForm = (this->*p[i])(target);
 			std::cout << "Intern creates " << newForm->getName() << std::endl;
 			return newForm;
 		}
 	}
-    std::cout << "Intern could not create the form : " << name << std::endl;
+    throw Intern::InternIsDummException();
     return NULL;
 }
 
