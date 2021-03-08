@@ -3,14 +3,17 @@
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
-	Form *schrub = new ShrubberyCreationForm("my_first_trees");
-	Form *pardon = new PresidentialPardonForm("HELP");
-	Form *robo = new RobotomyRequestForm("ALED");
 	Bureaucrat boss("The BOSS", 10);
 	Bureaucrat larbin("M larbin", 150);
+	Intern intern;
+    Form *pardon = intern.makeForm("presidential pardon", "HELP");
+    Form *schrub = intern.makeForm("shrubbery creation", "my_first_trees");
+    Form *robo = intern.makeForm("robotomy request", "ALED");
+
 	try
 	{
 		schrub->execute(boss);

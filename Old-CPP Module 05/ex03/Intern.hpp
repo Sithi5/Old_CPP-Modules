@@ -11,7 +11,10 @@ public:
 	virtual ~Intern(void);
 	Intern & operator=(Intern const &rhs);
 
-	Form * makeForm(std::string name, std::string target);
+    Form * makeShrubberyCreationForm(std::string const &target);
+    Form * makePresidentialPardonForm(std::string const &target);
+    Form * makeRobotomyRequestForm(std::string const &target);
+	Form * makeForm(std::string const &name, std::string const &target);
 };
 
 #endif

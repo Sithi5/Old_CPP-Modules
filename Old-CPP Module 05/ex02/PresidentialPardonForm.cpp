@@ -1,6 +1,6 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : Form("Shrubbery", 145, 137), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : Form("PresidentialPardon", 145, 137), _target(target)
 {
 }
 
@@ -8,7 +8,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) : Form("Shrubbery", 145, 137)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) : Form("PresidentialPardon", 145, 137)
 {
 	*this = copy;
 }

@@ -1,15 +1,16 @@
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : Form("Shrubbery", 145, 137), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : Form("RobotomyRequest", 145, 137), _target(target)
 {
+    srand(time(NULL));
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : Form("Shrubbery", 145, 137)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : Form("RobotomyRequest", 145, 137)
 {
 	*this = copy;
 }
