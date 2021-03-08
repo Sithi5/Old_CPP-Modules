@@ -3,6 +3,7 @@
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : Form("Shrubbery", 145, 137), _target(target)
 {
+    srand(time(NULL));
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()

@@ -3,6 +3,8 @@
 #define TEST_ROBOTOMYREQUESTFORM_HPP
 
 #include "Form.hpp"
+#include <time.h>
+#include <stdlib.h>
 
 class RobotomyRequestForm : public Form
 {
