@@ -42,7 +42,6 @@ void OfficeBlock::doBureaucracy(const std::string &name, const std::string &targ
     try{
         Form *new_form = this->getIntern()->makeForm(name, target);
         new_form->beSigned(*(this->getFirstBureaucrat()));
-        std::cout << "executor lvl = " << this->getSecondBureaucrat()->getGrade() << std::endl;
         new_form->execute(*(this->getSecondBureaucrat()));
     }
     catch(Intern::InternIsDummException){
@@ -75,7 +74,7 @@ const char *OfficeBlock::OfficeOrganizationIsAMess::what() const throw() {
 }
 
 const char *OfficeBlock::OfficeBureaucrateUnqualified::what() const throw() {
-    return "A bureaucrate seems to be an idiot, he don't know how to sign !";
+    return "A bureaucrate seems to be an idiot, he don't know how to execute or sign a form !";
 }
 
 const char *OfficeBlock::OfficeBureaucrateTooMuchqualified::what() const throw() {

@@ -34,9 +34,9 @@ std::string generateRandomTask(){
     if (random_num == 0){
         return std::string("presidential pardon");
     }
-//    else if (random_num == 1){
-//        return std::string("shrubbery creation");
-//    }
+    else if (random_num == 1){
+        return std::string("shrubbery creation");
+    }
     else if (random_num == 3){
         return std::string("robotomy request");
     }
@@ -99,9 +99,9 @@ int main(void) {
     }
 
 //    test generating new bureaucrat
-
+    std::cout << std::endl << "GENERATING MORE BUREAUCRATE AND TASK" << std::endl << std::endl;
     try{
-        for (int i = 0; i < 45; i++){
+        for (int i = 0; i < 20; i++){
             central.hiring(generateBureaucrate());
             std::cout <<std::endl;
         }
@@ -114,5 +114,24 @@ int main(void) {
     catch(std::exception const &e){
         std::cerr << e.what() << std::endl;
     }
+
+    //    test generating new bureaucrat, more than capacity of central
+    std::cout << std::endl << "GENERATING MORE BUREAUCRATE AND TASK" << std::endl << std::endl;
+
+    try{
+        for (int i = 0; i < 25; i++){
+            central.hiring(generateBureaucrate());
+            std::cout <<std::endl;
+        }
+        for (int i = 0; i < 50; i++ ){
+            central.queueUp(generateRandomTask(), generateRandomTaskName());
+        }
+        std::cout << std::endl << "EXECUTING ALL TASK" << std::endl << std::endl;
+        central.executeAllTask();
+    }
+    catch(std::exception const &e){
+        std::cerr << e.what() << std::endl;
+    }
+
     std::cout << std::endl << "END OF MAIN, CALL TO CENTRALBLOCK DESTRUCTOR" << std::endl << std::endl;
 }
