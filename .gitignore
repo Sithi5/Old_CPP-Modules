@@ -3,3 +3,4 @@
 **/CMakeLists.txt
 **/a.out
 .vscode
+**/obj
