@@ -18,7 +18,7 @@ int main(int ac, char **av) {
                 std::cout << "char: " << "not printable" << std::endl;
             }
             else{
-                std::cout << "char: " << c << std::endl;
+                std::cout << "char: \'" << c << "\'"<< std::endl;
             }
         }
         catch(std::exception const &e){

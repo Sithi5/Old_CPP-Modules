@@ -16,13 +16,38 @@ public:
     virtual ~Litteral();
 
 
-    operator char();
+    operator char() const;
 
-    operator int();
+    operator int() const;
 
-    operator float();
+    operator float() const;
 
-    operator double();
+    operator double() const;
+
+
+    const std::string &getLitteralType() const;
+
+    void setLitteralType(const std::string &litteralType);
+
+    const std::string &getInput() const;
+
+    void setInput(const std::string &input);
+
+    int getLitteralInt() const;
+
+    void setLitteralInt(int litteralInt);
+
+    char getLitteralChar() const;
+
+    void setLitteralChar(char litteralChar);
+
+    float getLitteralFloat() const;
+
+    void setLitteralFloat(float litteralFloat);
+
+    double getLitteralDouble() const;
+
+    void setLitteralDouble(double litteralDouble);
 
 private:
     Litteral();
