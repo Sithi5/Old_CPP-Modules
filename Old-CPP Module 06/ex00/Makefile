@@ -91,6 +91,7 @@ _ICYAN				=	$'\033[46m
 _IGREY				=	$'\033[47m
 
 SRC_NAME =			main.cpp   \
+					Litteral.cpp	\
 
 
 SRC_PATH =			./
@@ -99,7 +100,7 @@ OBJ_PATH =			./obj/
 
 INC_PATH =			./
 
-# INC_NAME =
+INC_NAME =			Litteral.hpp	\
 
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ = $(patsubst $(SRC_PATH)%.cpp, $(OBJ_PATH)%.o, $(SRC))

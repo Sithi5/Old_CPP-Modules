@@ -6,22 +6,27 @@
 
 class Litteral {
 public:
-    Litteral(std::string input);
+    Litteral(std::string &input);
+
+    Litteral(Litteral const &cpy);
+
+    Litteral &operator=(Litteral const &rhs);
 
     virtual ~Litteral();
 
 
-    explicit operator char();
+    operator char();
 
-    explicit operator int();
+    operator int();
 
-    explicit operator float();
+    operator float();
 
-    explicit operator double();
+    operator double();
 
 private:
+    Litteral();
+
     std::string _input;
-    double _litteral;
 };
 
 

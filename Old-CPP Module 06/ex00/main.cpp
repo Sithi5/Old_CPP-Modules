@@ -7,7 +7,8 @@ int main(int ac, char **av) {
         return 0;
     }
 
-    Litteral litteral = Litteral(std::string(av[1]));
+    std::string input = av[1];
+    Litteral litteral = Litteral(input);
 
 //    printing char conversion
     try{
