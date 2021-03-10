@@ -5,7 +5,7 @@ ifeq ($(UNAME), Linux)
 endif
 
 # Executable name
-NAME				=	ex00
+NAME				=	convert
 
 # Compilation mode
 WALL				=	yes

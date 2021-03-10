@@ -3,6 +3,8 @@
 #define TEST_LITTERAL_HPP
 
 #include <iostream>
+#include <math.h>
+
 #include "stdlib.h"
 
 class Litteral {
@@ -16,14 +18,18 @@ public:
     virtual ~Litteral();
 
 
-    operator char() const;
+    operator char() const throw(ImpossibleConversion);
 
-    operator int() const;
+    operator int() const throw(ImpossibleConversion);
 
-    operator float() const;
+    operator float() const throw(ImpossibleConversion);
 
-    operator double() const;
+    operator double() const throw(ImpossibleConversion);
 
+    bool LitteralIsChar();
+    bool LitteralIsInt();
+    bool LitteralIsFloat();
+    bool LitteralIsDouble();
 
     const std::string &getLitteralType() const;
 
@@ -48,6 +54,12 @@ public:
     double getLitteralDouble() const;
 
     void setLitteralDouble(double litteralDouble);
+
+    class ImpossibleConversion : public std::exception
+    {
+    public:
+        virtual const char *what() const throw();
+    };
 
 private:
     Litteral();

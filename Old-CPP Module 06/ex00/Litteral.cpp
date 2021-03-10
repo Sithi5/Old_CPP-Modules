@@ -2,47 +2,20 @@
 #include "Litteral.hpp"
 
 Litteral::Litteral(std::string &input) : _input(input) {
-    if (this->getInput().length() == 1) {
-        if (isdigit(this->getInput()[0])) {
-            this->setLitteralType(std::string("int"));
-            this->setLitteralInt(atoi(this->getInput().c_str()));
-        } else {
-            this->setLitteralType(std::string("char"));
-            this->setLitteralChar(this->getInput()[0]);
-        }
+    if (this->LitteralIsChar()) {
+        this->setLitteralType(std::string("char"));
+        this->setLitteralChar(this->getInput()[0]);
+    } else if (this->LitteralIsInt()) {
+        this->setLitteralType(std::string("int"));
+        this->setLitteralInt(atoi(this->getInput().c_str()));
+    } else if (this->LitteralIsFloat()) {
+        this->setLitteralType(std::string("float"));
+        this->setLitteralFloat(atof(this->getInput().c_str()));
+    } else if (this->LitteralIsDouble()) {
+        this->setLitteralType(std::string("double"));
+        this->setLitteralDouble(atof(this->getInput().c_str()));
     } else {
-        bool flag_digit_before_dot = false;
-        bool flag_dot = false;
-        bool flag_digit_after_dot = false;
-        for (unsigned int i = 0; i < this->getInput().size(); i++) {
-
-            if (i == 0 && (this->getInput()[i] == '-' || this->getInput()[i] == '+')) {
-                continue;
-            } else if (isdigit(this->getInput()[i]) && !flag_dot) {
-                flag_digit_before_dot = true;
-            } else if (isdigit(this->getInput()[i]) && flag_dot && !flag_digit_after_dot) {
-                flag_digit_after_dot = true;
-            } else if (this->getInput()[i] == '.') {
-                if (!flag_digit_before_dot || flag_dot) {
-                    throw std::runtime_error("Two dot in the input, it cannot be any of the available type.");
-                }
-                flag_dot = true;
-            } else if (this->getInput()[i] == 'f' && flag_digit_before_dot && flag_dot && flag_digit_after_dot &&
-                       i == this->getInput().size() - 1) {
-                this->setLitteralType(std::string("float"));
-                this->setLitteralFloat(atof(this->getInput().c_str()));
-            } else if (!isdigit(this->getInput()[i])) {
-                throw std::runtime_error(std::string("The character : ") + this->getInput()[i] + " is invalid.");
-            }
-            if (isdigit(this->getInput()[i]) && i == this->getInput().size() - 1 && flag_dot) {
-                this->setLitteralType(std::string("double"));
-                this->setLitteralDouble(atof(this->getInput().c_str()));
-            }
-            else if (isdigit(this->getInput()[i]) && i == this->getInput().size() - 1){
-                this->setLitteralType(std::string("int"));
-                this->setLitteralInt(atoi(this->getInput().c_str()));
-            }
-        }
+        throw std::runtime_error("input is not any of accepted litteral type.");
     }
     std::cout << "Litteral type is : " << this->getLitteralType() << std::endl;
 }
@@ -65,30 +38,47 @@ Litteral::~Litteral() {
 
 }
 
-Litteral::operator char() const {
+Litteral::operator char() const throw(ImpossibleConversion){
     if (!(this->getLitteralType().compare("char"))) {
         return this->getLitteralChar();
     } else if (!(this->getLitteralType().compare("int"))) {
         return static_cast<char>(this->getLitteralInt());
     } else if (!(this->getLitteralType().compare("float"))) {
-        return static_cast<char>(this->getLitteralFloat());}
-    else{
-        return static_cast<char>(this->getLitteralDouble());}
+        if (!std::isinf(this->getLitteralFloat()) && !std::isnan(this->getLitteralFloat())) {
+            return static_cast<char>(this->getLitteralFloat());
+        } else {
+            throw Litteral::ImpossibleConversion();
+        }
+    } else {
+        if (!std::isinf(this->getLitteralDouble()) && !std::isnan(this->getLitteralDouble())) {
+            return static_cast<char>(this->getLitteralDouble());
+        } else {
+            throw Litteral::ImpossibleConversion();
+        }
+    }
 }
 
-Litteral::operator int() const {
+Litteral::operator int() const throw(ImpossibleConversion){
     if (!(this->getLitteralType().compare("char"))) {
         return static_cast<int>(this->getLitteralChar());
     } else if (!(this->getLitteralType().compare("int"))) {
         return this->getLitteralInt();
     } else if (!(this->getLitteralType().compare("float"))) {
-        return static_cast<int>(this->getLitteralFloat());
+        if (!std::isinf(this->getLitteralFloat()) && !std::isnan(this->getLitteralFloat())) {
+            return static_cast<int>(this->getLitteralFloat());
+        } else {
+            throw Litteral::ImpossibleConversion();
+        }
     } else {
-        return static_cast<int>(this->getLitteralDouble());
+        if (!std::isinf(this->getLitteralDouble()) && !std::isnan(this->getLitteralDouble())) {
+            return static_cast<int>(this->getLitteralDouble());
+        } else {
+            throw Litteral::ImpossibleConversion();
+        }
     }
 }
 
-Litteral::operator float() const {
+Litteral::operator float() const throw(ImpossibleConversion){
     if (!(this->getLitteralType().compare("char"))) {
         return static_cast<float>(this->getLitteralChar());
     } else if (!(this->getLitteralType().compare("int"))) {
@@ -100,7 +90,7 @@ Litteral::operator float() const {
     }
 }
 
-Litteral::operator double() const {
+Litteral::operator double() const throw(ImpossibleConversion){
     if (!(this->getLitteralType().compare("char"))) {
         return static_cast<double>(this->getLitteralChar());
     } else if (!(this->getLitteralType().compare("int"))) {
@@ -160,3 +150,86 @@ void Litteral::setLitteralDouble(double litteralDouble) {
     this->_litteral_double = litteralDouble;
 }
 
+bool Litteral::LitteralIsChar() {
+    if (this->getInput().length() == 1 && !isdigit(this->getInput()[0])) {
+        return true;
+    }
+    return false;
+}
+
+bool Litteral::LitteralIsInt() {
+    for (unsigned int i = 0; i < this->getInput().size(); i++) {
+        if (i == 0 && this->getInput().size() > 1 && (this->getInput()[i] == '-' || this->getInput()[i] == '+')) {
+            continue;
+        }
+        if (!isdigit(this->getInput()[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool Litteral::LitteralIsFloat() {
+    if (!this->getInput().compare("+inff") || !this->getInput().compare("-inff") || !this->getInput().compare("nanf")) {
+        return true;
+    }
+
+    bool flag_digit_before_dot = false;
+    bool flag_dot = false;
+    bool flag_digit_after_dot = false;
+    for (unsigned int i = 0; i < this->getInput().size(); i++) {
+        if (i == 0 && this->getInput().size() > 1 && (this->getInput()[i] == '-' || this->getInput()[i] == '+')) {
+            continue;
+        }
+        if (!isdigit(this->getInput()[i])) {
+            if (!flag_dot && flag_digit_before_dot && this->getInput()[i] == '.') {
+                flag_dot = true;
+            } else if (i == this->getInput().size() - 1 && flag_digit_after_dot && flag_digit_before_dot && flag_dot &&
+                       this->getInput()[i] == 'f') {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (!flag_digit_before_dot) {
+            flag_digit_before_dot = true;
+        } else if (!flag_digit_after_dot && flag_digit_before_dot && flag_dot) {
+            flag_digit_after_dot = true;
+        }
+    }
+    return false;
+}
+
+bool Litteral::LitteralIsDouble() {
+    if (!this->getInput().compare("+inf") || !this->getInput().compare("-inf") || !this->getInput().compare("nan")) {
+        return true;
+    }
+
+    bool flag_digit_before_dot = false;
+    bool flag_dot = false;
+    bool flag_digit_after_dot = false;
+    for (unsigned int i = 0; i < this->getInput().size(); i++) {
+        if (i == 0 && this->getInput().size() > 1 && (this->getInput()[i] == '-' || this->getInput()[i] == '+')) {
+            continue;
+        }
+        if (!isdigit(this->getInput()[i])) {
+            if (!flag_dot && flag_digit_before_dot && this->getInput()[i] == '.') {
+                flag_dot = true;
+            } else {
+                return false;
+            }
+        } else if (!flag_digit_before_dot) {
+            flag_digit_before_dot = true;
+        } else if (!flag_digit_after_dot && flag_digit_before_dot && flag_dot) {
+            flag_digit_after_dot = true;
+        }
+    }
+    if (flag_digit_after_dot && flag_digit_before_dot && flag_dot) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+const char *Litteral::ImpossibleConversion::what() const throw() {
+    return "This conversion is not possible.";
+}
