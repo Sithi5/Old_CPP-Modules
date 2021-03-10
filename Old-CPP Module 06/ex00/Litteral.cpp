@@ -33,52 +33,50 @@ Litteral &Litteral::operator=(const Litteral &rhs) {
     return *this;
 }
 
-
 Litteral::~Litteral() {
-
 }
 
-Litteral::operator char() const throw(ImpossibleConversion){
+Litteral::operator char() const throw(ImpossibleConversion) {
     if (!(this->getLitteralType().compare("char"))) {
         return this->getLitteralChar();
     } else if (!(this->getLitteralType().compare("int"))) {
         return static_cast<char>(this->getLitteralInt());
     } else if (!(this->getLitteralType().compare("float"))) {
-        if (!std::isinf(this->getLitteralFloat()) && !std::isnan(this->getLitteralFloat())) {
-            return static_cast<char>(this->getLitteralFloat());
-        } else {
+        if (this->getInput() == "+inff" || this->getInput() == "-inff" || this->getInput() == "nanf") {
             throw Litteral::ImpossibleConversion();
+        } else {
+            return static_cast<char>(this->getLitteralFloat());
         }
     } else {
-        if (!std::isinf(this->getLitteralDouble()) && !std::isnan(this->getLitteralDouble())) {
-            return static_cast<char>(this->getLitteralDouble());
-        } else {
+        if (this->getInput() == "+inf" || this->getInput() == "-inf" || this->getInput() == "nan") {
             throw Litteral::ImpossibleConversion();
+        } else {
+            return static_cast<char>(this->getLitteralDouble());
         }
     }
 }
 
-Litteral::operator int() const throw(ImpossibleConversion){
+Litteral::operator int() const throw(ImpossibleConversion) {
     if (!(this->getLitteralType().compare("char"))) {
         return static_cast<int>(this->getLitteralChar());
     } else if (!(this->getLitteralType().compare("int"))) {
         return this->getLitteralInt();
     } else if (!(this->getLitteralType().compare("float"))) {
-        if (!std::isinf(this->getLitteralFloat()) && !std::isnan(this->getLitteralFloat())) {
-            return static_cast<int>(this->getLitteralFloat());
-        } else {
+        if (this->getInput() == "+inff" || this->getInput() == "-inff" || this->getInput() == "nanf") {
             throw Litteral::ImpossibleConversion();
+        } else {
+            return static_cast<int>(this->getLitteralFloat());
         }
     } else {
-        if (!std::isinf(this->getLitteralDouble()) && !std::isnan(this->getLitteralDouble())) {
-            return static_cast<int>(this->getLitteralDouble());
-        } else {
+        if (this->getInput() == "+inf" || this->getInput() == "-inf" || this->getInput() == "nan") {
             throw Litteral::ImpossibleConversion();
+        } else {
+            return static_cast<int>(this->getLitteralDouble());
         }
     }
 }
 
-Litteral::operator float() const throw(ImpossibleConversion){
+Litteral::operator float() const throw(ImpossibleConversion) {
     if (!(this->getLitteralType().compare("char"))) {
         return static_cast<float>(this->getLitteralChar());
     } else if (!(this->getLitteralType().compare("int"))) {
@@ -90,7 +88,7 @@ Litteral::operator float() const throw(ImpossibleConversion){
     }
 }
 
-Litteral::operator double() const throw(ImpossibleConversion){
+Litteral::operator double() const throw(ImpossibleConversion) {
     if (!(this->getLitteralType().compare("char"))) {
         return static_cast<double>(this->getLitteralChar());
     } else if (!(this->getLitteralType().compare("int"))) {
@@ -170,7 +168,7 @@ bool Litteral::LitteralIsInt() {
 }
 
 bool Litteral::LitteralIsFloat() {
-    if (!this->getInput().compare("+inff") || !this->getInput().compare("-inff") || !this->getInput().compare("nanf")) {
+    if (this->getInput() == "+inff" || this->getInput() == "-inff" || this->getInput() == "nanf") {
         return true;
     }
 
@@ -200,7 +198,7 @@ bool Litteral::LitteralIsFloat() {
 }
 
 bool Litteral::LitteralIsDouble() {
-    if (!this->getInput().compare("+inf") || !this->getInput().compare("-inf") || !this->getInput().compare("nan")) {
+    if (this->getInput() == "+inf" || this->getInput() == "-inf" || this->getInput() == "nan") {
         return true;
     }
 

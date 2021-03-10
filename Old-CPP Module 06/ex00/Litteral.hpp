@@ -3,7 +3,6 @@
 #define TEST_LITTERAL_HPP
 
 #include <iostream>
-#include <math.h>
 
 #include "stdlib.h"
 
