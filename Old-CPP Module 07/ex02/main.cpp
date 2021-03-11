@@ -1,28 +1,39 @@
 #include "Array.tpp"
 
-int main(){
-	Array<int>	tab;
-	Array<int>	arra[10];
-	Array<char>	phrase[10];
-	Array<int>	tabtab(*arra);
+int main() {
+    Array<std::string> string_array(2);
+    Array<std::string> *heap_string_array = new Array<std::string>(2);
 
-	try
-	{
-		std::cout << tab[0] << std::endl;
-	}
-	catch(std::exception const &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	for (int i = 0; i < 10; i++)
-	{
-		phrase[i] = 'a' + i;
-	}
-	tabtab[0] = 42;
-	for (int i = 0; i < 10; i++)
-	{
-		std::cout << phrase[i] << std::endl;
-		std::cout << arra[i] << std::endl;
-		std::cout << tabtab[i] << std::endl;
-	}
+    string_array[0] = "abcd";
+    string_array[1] = "efgh";
+
+    heap_string_array[0][0] = "ijkl";
+    heap_string_array[0][1] = "mnop";
+
+    try {
+        std::cout << "String array size : " << string_array.size() << std::endl;
+        std::cout << "Heap string array size : " << heap_string_array->size() << std::endl;
+
+        std::cout << "String array content : " << std::endl;
+        for (unsigned int i = 0; i < string_array.size(); i++)
+            std::cout << "list[" << i << "] = " << string_array[i] << std::endl;
+
+        std::cout << "Heap string array content : " << std::endl;
+        for (unsigned int i = 0; i < heap_string_array->size(); i++)
+            std::cout << "list[" << i << "] = " << heap_string_array[0][i] << std::endl;
+    }
+    catch (std::exception const &e) {
+        std::cerr << e.what() << std::endl;
+    }
+
+    Array<std::string> string_array_empty;
+
+    try{
+        string_array_empty[0] = "abcd";
+    }
+    catch (std::exception const &e) {
+        std::cerr << "An error occured : " << e.what() << std::endl;
+    }
+
+    return 0;
 }
