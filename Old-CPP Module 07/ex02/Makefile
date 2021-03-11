@@ -5,7 +5,7 @@ ifeq ($(UNAME), Linux)
 endif
 
 # Executable name
-NAME				=	iter
+NAME				=	array
 
 # Compilation mode
 WALL				=	yes
@@ -90,7 +90,7 @@ _IPURPLE			=	$'\033[45m
 _ICYAN				=	$'\033[46m
 _IGREY				=	$'\033[47m
 
-SRC_NAME =			iter.cpp   \
+SRC_NAME =			main.cpp   \
 
 
 SRC_PATH =			./
