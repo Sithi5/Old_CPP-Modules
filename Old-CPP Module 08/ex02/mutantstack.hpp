@@ -15,7 +15,7 @@ public:
 	MutantStack & operator=(MutantStack const &rhs); 
 
 	typedef typename std::stack<Tr>::container_type::iterator iterator;
-	iterator begin(void) {return std::stack<T>::tmp.begin();}
+	iterator begin(void) {return std::stack<T>::c.begin();}
 	iterator rbegin(void);
 	iterator end(void);
 	iterator rend(void);
