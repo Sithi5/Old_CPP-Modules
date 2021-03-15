@@ -1,5 +1,5 @@
-#ifndef MUTANTSTACK_TPP
-# define MUTANTSTACK_TPP
+#ifndef MUTANTSTACK_HPP
+# define MUTANTSTACK_HPP
 
 #include <stack>
 #include <iterator>
