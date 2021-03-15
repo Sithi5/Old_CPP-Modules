@@ -14,11 +14,11 @@ private:
     T *_array;
     unsigned int _size;
 public:
-    Array(void) : _array(new T[0]), _size(0) {}
+    Array<T>(void) : _array(new T[0]), _size(0) {}
 
-    Array(unsigned int n) : _array(new T[n]), _size(n) {}
+    Array<T>(unsigned int n) : _array(new T[n]), _size(n) {}
 
-    Array(Array const &copy): _array(new T[0]), _size(0){
+    Array<T>(Array const &copy): _array(new T[0]), _size(0){
         *this = copy;
     }
 
@@ -37,7 +37,7 @@ public:
         return *this;
     }
 
-    virtual ~Array(void) {
+    virtual ~Array<T>(void) {
         delete [] this->getArray();
     }
 
