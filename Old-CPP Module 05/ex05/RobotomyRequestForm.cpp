@@ -1,7 +1,7 @@
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : Form("RobotomyRequest", 145, 75), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : Form("RobotomyRequest", 72, 45), _target(target)
 {
     srand(time(NULL));
 }
@@ -10,7 +10,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : Form("RobotomyRequest", 145, 75)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : Form("RobotomyRequest", 72, 45)
 {
 	*this = copy;
 }

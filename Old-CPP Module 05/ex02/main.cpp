@@ -41,5 +41,9 @@ int main(void)
 	schrub->execute(boss);
 	pardon->execute(boss);
 	robo->execute(boss);
+
+	delete schrub;
+	delete pardon;
+	delete robo;
 	return (0);
 }

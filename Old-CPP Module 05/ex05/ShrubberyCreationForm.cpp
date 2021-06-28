@@ -1,12 +1,12 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target): Form("Shrubbery", 145, 10), _target(target) {
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target): Form("Shrubbery", 145, 137), _target(target) {
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy): Form("Shrubbery", 145, 10) {
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy): Form("Shrubbery", 145, 137) {
     *this = copy;
 }
 
