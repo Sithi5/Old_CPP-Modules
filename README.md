@@ -67,36 +67,36 @@ This first module of C++ is designed to help you understand the specifities of t
 
 | Exercise | Name | Finished |
 |:--------:|:------------------------------------------------:|:----------------:|
-| 00       |Mommy, when I grow up, I want to be a bureaucrat! |                  |
-| 01       | Form up, maggots!                                |                  |
-| 02       | No, you need form 28B, not 28C...                |                  |
-| 03       | At least this beats coffee-making                |                  |
-| 04       | That’s the way I like it, nice and boring        |                  |
-| 05       | Endless red-tape generator                       |                  |
+| 00       |Mommy, when I grow up, I want to be a bureaucrat! |:heavy_check_mark:|
+| 01       | Form up, maggots!                                |:heavy_check_mark:|
+| 02       | No, you need form 28B, not 28C...                |:heavy_check_mark:|
+| 03       | At least this beats coffee-making                |:heavy_check_mark:|
+| 04       | That’s the way I like it, nice and boring        |:heavy_check_mark:|
+| 05       | Endless red-tape generator                       |:heavy_check_mark:|
 
 ## Module 06
 
 | Exercise | Name | Finished |
 |:--------:|:------------------:|:----------------:|
-| 00       | Scalar conversion  |                  |
-| 01       | Serialization      |                  |
-| 02       | Identify real type |                  |
+| 00       | Scalar conversion  |:heavy_check_mark:|
+| 01       | Serialization      |:heavy_check_mark:|
+| 02       | Identify real type |:heavy_check_mark:|
 
 ## Module 07
 
 | Exercise | Name | Finished |
 |:--------:|:---------------:|:----------------:|
-| 00       | A few functions |                  |
-| 01       | Iter            |                  |
-| 02       | Array           |                  |
+| 00       | A few functions |:heavy_check_mark:|
+| 01       | Iter            |:heavy_check_mark:|
+| 02       | Array           |:heavy_check_mark:|
 
 ## Module 08
 
 | Exercise | Name | Finished |
 |:--------:|:----------------------------------------:|:----------------:|
-| 00       | Easy find                                |                  |
-| 01       | Span                                     |                  |
-| 02       | Mutated abomination                      |                  |
+| 00       | Easy find                                |:heavy_check_mark:|
+| 01       | Span                                     |:heavy_check_mark:|
+| 02       | Mutated abomination                      |:heavy_check_mark:|
 | 03       | Open your mind, but please don’t fuck it |                  |
 | 04       | In Poland, expression evaluates you      |                  |
 
