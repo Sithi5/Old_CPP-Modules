@@ -1,23 +1,27 @@
 #include <iostream>
 
-template<typename T>
-T const &max(T const &x, T const &y) {
-    return (x >= y ? x : y);
+template <typename T>
+T const &max(T const &x, T const &y)
+{
+    return (x > y ? x : y);
 }
 
-template<typename T>
-T const &min(T const &x, T const &y) {
-    return (x <= y ? x : y);
+template <typename T>
+T const &min(T const &x, T const &y)
+{
+    return (x < y ? x : y);
 }
 
-template<typename T>
-void swap(T &s1, T &s2) {
+template <typename T>
+void swap(T &s1, T &s2)
+{
     T tmp = s1;
     s1 = s2;
     s2 = tmp;
 }
 
-int main(void) {
+int main(void)
+{
     int a = 2;
     int b = 3;
     ::swap(a, b);

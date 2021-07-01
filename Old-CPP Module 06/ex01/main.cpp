@@ -2,9 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 
-struct Data { std::string s1; int n; std::string s2; };
+struct Data
+{
+    std::string s1;
+    int n;
+    std::string s2;
+};
 
-void * serialize(void){
+void *serialize(void)
+{
     srand(time(NULL));
     Data *data = new Data();
     data->s1 = "test123";
@@ -14,13 +20,16 @@ void * serialize(void){
     return static_cast<void *>(data);
 }
 
-Data * deserialize(void * raw){
+Data *deserialize(void *raw)
+{
     return static_cast<Data *>(raw);
 }
 
-int main(void){
+int main(void)
+{
     void *raw = serialize();
     Data *data = deserialize(raw);
-    std::cout << "first string is : "<< data->s1 << " random n is : " << data->n << " second string is : " <<data->s2 << std::endl;
+    std::cout << "first string is : " << data->s1 << " random n is : " << data->n << " second string is : " << data->s2 << std::endl;
+    delete data;
     return 0;
 }

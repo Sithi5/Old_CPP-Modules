@@ -5,38 +5,49 @@
 
 #include <iostream>
 
-void identify_from_pointer(Base * p){
+void identify_from_pointer(Base *p)
+{
 
-    if (dynamic_cast<A*>(p)){
+    if (dynamic_cast<A *>(p))
+    {
         std::cout << "A" << std::endl;
     }
-    else if (dynamic_cast<B*>(p)){
+    else if (dynamic_cast<B *>(p))
+    {
         std::cout << "B" << std::endl;
     }
-    else if (dynamic_cast<C*>(p)){
+    else if (dynamic_cast<C *>(p))
+    {
         std::cout << "C" << std::endl;
     }
-    else{
+    else
+    {
         std::cout << "failed to identify..." << std::endl;
     }
 }
 
-void identify_from_reference( Base & p){
-    if (dynamic_cast<A*>(&p)){
+void identify_from_reference(Base &p)
+{
+    if (dynamic_cast<A *>(&p))
+    {
         std::cout << "A" << std::endl;
     }
-    else if (dynamic_cast<B*>(&p)){
+    else if (dynamic_cast<B *>(&p))
+    {
         std::cout << "B" << std::endl;
     }
-    else if (dynamic_cast<C*>(&p)){
+    else if (dynamic_cast<C *>(&p))
+    {
         std::cout << "C" << std::endl;
     }
-    else{
+    else
+    {
         std::cout << "failed to identify..." << std::endl;
     }
 }
 
-int main(void){
+int main(void)
+{
     Base *a = new A();
     Base *b = new B();
     Base *c = new C();
@@ -59,4 +70,7 @@ int main(void){
     identify_from_reference(e);
     identify_from_reference(f);
     identify_from_reference(g);
+    delete a;
+    delete b;
+    delete c;
 }
