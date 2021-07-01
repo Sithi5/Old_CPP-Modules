@@ -9,13 +9,17 @@
 #include <stdexcept>
 #include <sstream>
 
-template<typename T>
-int easyfind(T container, int item) throw(std::exception) {
+template <typename T>
+int easyfind(T container, int item) throw(std::exception)
+{
     typename T::iterator it;
 
-    if ((it = std::find(container.begin(), container.end(), item)) != container.end()) {
+    if ((it = std::find(container.begin(), container.end(), item)) != container.end())
+    {
         return std::distance(container.begin(), it);
-    } else {
+    }
+    else
+    {
         std::stringstream ss;
         ss << "item " << item << " was not found in the container.";
         throw std::runtime_error(ss.str().c_str());

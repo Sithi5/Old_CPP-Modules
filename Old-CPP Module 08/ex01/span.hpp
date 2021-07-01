@@ -7,7 +7,8 @@
 #include <time.h>
 #include <stdlib.h>
 
-class Span {
+class Span
+{
 
 public:
     Span(unsigned int storedNb);
@@ -24,12 +25,14 @@ public:
 
     void setContainer(const std::vector<int> &container);
 
-    class ContainerIsFull : public std::exception {
+    class ContainerIsFull : public std::exception
+    {
     public:
         virtual const char *what() const throw();
     };
 
-    class NotEnoughtElements : public std::exception {
+    class NotEnoughtElements : public std::exception
+    {
     public:
         virtual const char *what() const throw();
     };
@@ -38,15 +41,10 @@ public:
     int shortestSpan() throw(NotEnoughtElements);
     int longestSpan() throw(NotEnoughtElements);
 
-
-
 private:
     Span();
     unsigned int _max_stored_number;
     std::vector<int> _container;
-
-
 };
-
 
 #endif //TEST_SPAN_HPP
