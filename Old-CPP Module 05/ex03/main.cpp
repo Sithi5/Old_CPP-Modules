@@ -39,8 +39,16 @@ int main(void)
 	boss.signForm(pardon);
 	boss.signForm(robo);
 	schrub->execute(boss);
-	pardon->execute(boss);
 	robo->execute(boss);
+    try
+    {
+        pardon->execute(boss);
+    }
+    catch (std::exception const &e)
+    {
+        std::cerr << "error4 here : " << e.what() << std::endl;
+    }
+
 
 	try{
         Form *failed = intern.makeForm("robototo", "ALED");
@@ -50,5 +58,9 @@ int main(void)
         std::cerr << e.what() << std::endl;
 	}
 
+    std::cout << "\ndeleting the files."<<std::endl;
+    delete schrub;
+    delete pardon;
+    delete robo;
     return (0);
 }

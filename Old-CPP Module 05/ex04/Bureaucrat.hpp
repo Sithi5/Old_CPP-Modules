@@ -34,6 +34,8 @@ public:
 	void incrementGrade(void);
 	void decrementGrade(void);
 
+    void executeForm(Form const &form);
+
 private:
 	Bureaucrat();
 	std::string const _name;

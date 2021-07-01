@@ -7,7 +7,6 @@ OfficeBlock::OfficeBlock(Bureaucrat *first_bureaucrat, Bureaucrat *second_bureau
 }
 
 OfficeBlock::~OfficeBlock() {
-
 }
 
 Bureaucrat *OfficeBlock::getFirstBureaucrat() const {
@@ -38,27 +37,32 @@ void OfficeBlock::doBureaucracy(const std::string &name, const std::string &targ
     if (!this->getFirstBureaucrat() || !this->getSecondBureaucrat() || !this->getIntern()) {
         throw OfficeBlock::OfficeBlockMissSomeone();
     }
+    Form *new_form = this->getIntern()->makeForm(name, target);
     try{
-        Form *new_form = this->getIntern()->makeForm(name, target);
         new_form->beSigned(*(this->getFirstBureaucrat()));
         new_form->execute(*(this->getSecondBureaucrat()));
+        delete new_form;
     }
     catch(Intern::InternIsDummException){
+        delete new_form;
         throw OfficeBlock::OfficeInternIsDumm();
     }
     catch(Form::AlreadySignedException){
+        delete new_form;
         throw OfficeBlock::OfficeOrganizationIsAMess();
     }
     catch(Form::GradeTooLowException){
+        delete new_form;
         throw OfficeBlock::OfficeBureaucrateUnqualified();
     }
     catch(Form::GradeTooHighException){
+        delete new_form;
         throw OfficeBlock::OfficeBureaucrateTooMuchqualified();
     }
     catch(Form::UnsignedFormException){
+        delete new_form;
         throw OfficeBlock::OfficeChaos();
     }
-    catch()
 }
 
 const char *OfficeBlock::OfficeBlockMissSomeone::what() const throw() {

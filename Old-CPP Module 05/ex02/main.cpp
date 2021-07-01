@@ -17,16 +17,17 @@ int main(void)
 	}
 	catch (Form::UnsignedFormException const &e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << "error here : " << e.what() << std::endl;
 	}
 	boss.signForm(schrub);
 	try
 	{
-		larbin.signForm(robo);
+        boss.executeForm(*schrub);
+        larbin.signForm(robo);
 	}
 	catch (std::exception const &e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << "error2 here : " << e.what() << std::endl;
 	}
 	try
 	{
@@ -34,14 +35,24 @@ int main(void)
 	}
 	catch (std::exception const &e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << "error3 here : " << e.what() << std::endl;
 	}
 	boss.signForm(pardon);
 	boss.signForm(robo);
 	schrub->execute(boss);
-	pardon->execute(boss);
+    try
+    {
+        pardon->execute(boss);
+    }
+    catch (std::exception const &e)
+    {
+        std::cerr << "error4 here : " << e.what() << std::endl;
+    }
 	robo->execute(boss);
 
+
+
+    std::cout << "\ndeleting the files."<<std::endl;
 	delete schrub;
 	delete pardon;
 	delete robo;

@@ -102,6 +102,7 @@ void CentralBureaucracy::hiring(Bureaucrat *jobless) {
 CentralBureaucracy::~CentralBureaucracy() {
     OfficeBlock *blocks = this->getBlocks();
     for (int i = 0; i < 20; i++) {
+        delete blocks[i].getIntern();
         if (blocks[i].getFirstBureaucrat()) {
             delete blocks[i].getFirstBureaucrat();
         }

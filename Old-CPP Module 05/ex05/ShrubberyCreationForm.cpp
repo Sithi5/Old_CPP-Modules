@@ -19,7 +19,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 
-void ShrubberyCreationForm::execute(const Bureaucrat &executor) {
+void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
     Form::execute(executor);
     std::ofstream ofs((this->_target + "_shrubbery").c_str(), std::ios::out);
     if (!ofs.is_open()) {

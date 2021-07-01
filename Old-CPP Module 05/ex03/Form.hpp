@@ -49,7 +49,7 @@ public:
 
 	void beSigned(Bureaucrat const &bureaucrat);
 
-    virtual void execute(Bureaucrat const & executor);
+    virtual void execute(const Bureaucrat &executor) const = 0;
 
 private:
 	Form();

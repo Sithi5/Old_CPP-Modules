@@ -90,7 +90,7 @@ void Form::beSigned(const Bureaucrat &bureaucrat)
 	}
 }
 
-void Form::execute(const Bureaucrat &executor) {
+void Form::execute(const Bureaucrat &executor) const {
     if (executor.getGrade() > this->getExecGrade())
         throw Form::GradeTooLowException();
     if (!this->isIsSigned())
