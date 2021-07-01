@@ -49,5 +49,12 @@ int main(void)
     std::cout << "g = " << g << ", h = " << h << std::endl;
     std::cout << "min( g, h ) = " << ::min(g, h) << std::endl;
     std::cout << "max( g, h ) = " << ::max(g, h) << std::endl;
+
+    int i = 10;
+    int j = 10;
+    ::swap(i, j);
+    std::cout << "i = " << i << ", h = " << h << std::endl;
+    std::cout << "min( i, j ) = " << ::min(i, j) << std::endl;
+    std::cout << "max( i, j ) = " << ::max(i, j) << std::endl;
     return 0;
 }
